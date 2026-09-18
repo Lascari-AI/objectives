@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "doc-7291be39ca779ec039d20c9e6d421e66",
+  "title": "Objectives",
+  "root": "root",
+  "blocks": {
+    "root": {
+      "id": "root",
+      "type": "paragraph",
+      "props": {},
+      "children": [
+        "00-foundation-1",
+        "00-foundation-2",
+        "00-foundation-3",
+        "00-foundation-4",
+        "00-foundation-5",
+        "00-foundation-6",
+        "00-foundation-7",
+        "00-foundation-8",
+        "00-foundation-9",
+        "00-foundation-10",
+        "00-foundation-11",
+        "00-foundation-12",
+        "00-foundation-13",
+        "00-foundation-14",
+        "00-foundation-15",
+        "00-foundation-16",
+        "00-foundation-17",
+        "00-foundation-18"
+      ]
+    },
+    "00-foundation-1": {
+      "id": "00-foundation-1",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Objectives give long-running agent work a durable goal, a bounded plan, and an evidence-backed handoff. The setup-objective skill prepares and maintains these files so a fresh session can reconstruct what to do next."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-2": {
+      "id": "00-foundation-2",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "What You Get"
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-3": {
+      "id": "00-foundation-3",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "An objective lives in your project beside the work it describes. Its goal names the outcome and completion criteria. Context files hold the constraints and execution plan. Current state records accepted decisions, unfinished work, and paths to the evidence."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-4": {
+      "id": "00-foundation-4",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The repository provides the authoring skill, a Python scaffolder, and a goal-length validator. The agent executes the work using its own tools. Project-specific runners implement checkpoints and runtime controls when the work needs them."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-5": {
+      "id": "00-foundation-5",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "When to Use It"
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-6": {
+      "id": "00-foundation-6",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Use an objective for research, migrations, audits, or implementation that spans sessions or produces evidence you need to revisit."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-7": {
+      "id": "00-foundation-7",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Use it when the next session needs to distinguish a completed experiment from an achieved outcome."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-8": {
+      "id": "00-foundation-8",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "For a small change with one obvious check, keep the working context proportionate. A long-running runner needs more operational state than a short edit."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-9": {
+      "id": "00-foundation-9",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "The Working Agreement"
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-10": {
+      "id": "00-foundation-10",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "A future agent should be able to answer four questions from the files: What is the outcome? What is allowed to change? What evidence already exists? What is the next valid action?"
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-11": {
+      "id": "00-foundation-11",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "A written checkpoint requirement does not create a checkpoint mechanism. The skill asks for observable, resumable work, but the runner and its tests must provide those properties. Host features such as Codex goals separately control continuation and budgets."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-12": {
+      "id": "00-foundation-12",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Read the Docs"
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-13": {
+      "id": "00-foundation-13",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Create and Resume an Objective",
+          "attributes": {
+            "reference": {
+              "kind": "doc",
+              "path": "40-guides"
+            }
+          }
+        },
+        {
+          "insert": " walks through setup, a small example, and the first handoff."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-14": {
+      "id": "00-foundation-14",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Objective Bundle and Lifecycle",
+          "attributes": {
+            "reference": {
+              "kind": "doc",
+              "path": "10-system-design"
+            }
+          }
+        },
+        {
+          "insert": " defines file ownership, evidence, and completion."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-15": {
+      "id": "00-foundation-15",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Setup Objective Skill",
+          "attributes": {
+            "reference": {
+              "kind": "doc",
+              "path": "20-agents"
+            }
+          }
+        },
+        {
+          "insert": " describes what the authoring agent reads, writes, and checks."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-16": {
+      "id": "00-foundation-16",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Scaffold and Validator",
+          "attributes": {
+            "reference": {
+              "kind": "doc",
+              "path": "30-implementation"
+            }
+          }
+        },
+        {
+          "insert": " maps the design to the two Python helpers and their limitations."
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-17": {
+      "id": "00-foundation-17",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Source and Scope"
+        }
+      ],
+      "children": []
+    },
+    "00-foundation-18": {
+      "id": "00-foundation-18",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The skill source is "
+        },
+        {
+          "insert": ".codex/skills/setup-objective/SKILL.md",
+          "attributes": {
+            "code": true,
+            "reference": {
+              "kind": "source",
+              "path": ".codex/skills/setup-objective/SKILL.md"
+            }
+          }
+        },
+        {
+          "insert": ". These initial docs describe the checked-in implementation at revision 5fe8249 and assume familiarity with coding agents. They do not require a particular host's autonomous-goal feature."
+        }
+      ],
+      "children": []
+    }
+  }
+}

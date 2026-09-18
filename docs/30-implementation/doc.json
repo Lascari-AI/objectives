@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "id": "doc-496fdebfc61ec3cfb6f03b10263bf2fc",
+  "title": "Scaffold and Validator",
+  "root": "root",
+  "blocks": {
+    "root": {
+      "id": "root",
+      "type": "paragraph",
+      "props": {},
+      "children": [
+        "30-implementation-1",
+        "30-implementation-2",
+        "30-implementation-3",
+        "30-implementation-4",
+        "30-implementation-5",
+        "30-implementation-6",
+        "30-implementation-7",
+        "30-implementation-8",
+        "30-implementation-9",
+        "30-implementation-10",
+        "30-implementation-11",
+        "30-implementation-12",
+        "30-implementation-13",
+        "30-implementation-14",
+        "30-implementation-15",
+        "30-implementation-16",
+        "30-implementation-17"
+      ]
+    },
+    "30-implementation-1": {
+      "id": "30-implementation-1",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The skill's Python helpers create a Markdown bundle and check goal length. They use the Python standard library and do not execute the objective, schedule work, or manage checkpoints."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-2": {
+      "id": "30-implementation-2",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Their behavior supports the "
+        },
+        {
+          "insert": "Objective Bundle and Lifecycle",
+          "attributes": {
+            "reference": {
+              "kind": "doc",
+              "path": "10-system-design"
+            }
+          }
+        },
+        {
+          "insert": " contract. The source is under .codex/skills/setup-objective/scripts/."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-3": {
+      "id": "30-implementation-3",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Scaffold"
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-4": {
+      "id": "30-implementation-4",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The implementation is "
+        },
+        {
+          "insert": ".codex/skills/setup-objective/scripts/create_objective.py",
+          "attributes": {
+            "code": true,
+            "reference": {
+              "kind": "source",
+              "path": ".codex/skills/setup-objective/scripts/create_objective.py"
+            }
+          }
+        },
+        {
+          "insert": ". It normalizes the name to a lowercase hyphenated slug and writes the goal, state, README, and five context templates."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-5": {
+      "id": "30-implementation-5",
+      "type": "structured-table",
+      "props": {
+        "columns": [
+          "Argument",
+          "Behavior"
+        ],
+        "rows": [
+          [
+            "name",
+            "Required objective name or slug."
+          ],
+          [
+            "--title TEXT",
+            "Readable title; otherwise derived from the slug."
+          ],
+          [
+            "--root PATH",
+            "Output root; defaults to objectives relative to the current directory."
+          ],
+          [
+            "--no-examples",
+            "Skip examples/.gitkeep."
+          ],
+          [
+            "--date TEXT",
+            "Initial state date; defaults to today's date. Use YYYY-MM-DD."
+          ],
+          [
+            "--force",
+            "Overwrite existing scaffold files. This replaces content, so inspect the destination first."
+          ]
+        ]
+      },
+      "children": []
+    },
+    "30-implementation-6": {
+      "id": "30-implementation-6",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Overwrite refusal is per file, not a transaction across the entire bundle. A partially populated destination can receive earlier files before a later existing file causes failure. Inspect the directory after a failure instead of rerunning with --force."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-7": {
+      "id": "30-implementation-7",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The templates are intentionally incomplete. A successful scaffold command means the files exist, not that the objective is ready to execute."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-8": {
+      "id": "30-implementation-8",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Goal-Length Validator"
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-9": {
+      "id": "30-implementation-9",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The implementation is "
+        },
+        {
+          "insert": ".codex/skills/setup-objective/scripts/validate_goal_length.py",
+          "attributes": {
+            "code": true,
+            "reference": {
+              "kind": "source",
+              "path": ".codex/skills/setup-objective/scripts/validate_goal_length.py"
+            }
+          }
+        },
+        {
+          "insert": ". It reads a file or stdin, strips surrounding whitespace and an outer fenced block, removes a leading /goal command when followed by whitespace, and counts Python string characters."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-10": {
+      "id": "30-implementation-10",
+      "type": "structured-table",
+      "props": {
+        "columns": [
+          "Argument",
+          "Behavior"
+        ],
+        "rows": [
+          [
+            "path",
+            "Optional file. When omitted, read stdin."
+          ],
+          [
+            "--max-chars N",
+            "Hard maximum; default 3,999."
+          ],
+          [
+            "--target-chars N",
+            "Optional advisory target; no target by default."
+          ],
+          [
+            "--compact-target",
+            "Use the 1,600-character advisory target unless an explicit target is set."
+          ],
+          [
+            "--strict-target",
+            "Fail above the selected target; default target becomes 1,600 if none was chosen."
+          ]
+        ]
+      },
+      "children": []
+    },
+    "30-implementation-11": {
+      "id": "30-implementation-11",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The helper prints objective_chars, target_chars, and max_chars. It returns exit code 1 above the hard maximum, or above a strict target. An advisory target warning alone returns success. An empty goal can pass this length check, so semantic review remains necessary."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-12": {
+      "id": "30-implementation-12",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The default maximum reflects the Codex TUI constraint recorded by this skill. This guide documents the local helper's behavior; it does not establish a current limit for every Codex client or other agent host."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-13": {
+      "id": "30-implementation-13",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Implementation Choices"
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-14": {
+      "id": "30-implementation-14",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Markdown keeps objective state inspectable with ordinary repository tools. Pseudo-XML marks sections without introducing a runtime parser. The helper scripts remain small because execution belongs to the project's agent and runners."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-15": {
+      "id": "30-implementation-15",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "A project-specific runner must implement compatibility checks, atomic checkpoints, and controls itself. Documentation of a flag such as --resume does not prove that every historical AutoHDR runner meets the later guidance."
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-16": {
+      "id": "30-implementation-16",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Skill Metadata"
+        }
+      ],
+      "children": []
+    },
+    "30-implementation-17": {
+      "id": "30-implementation-17",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The Codex display name and default skill prompt are in "
+        },
+        {
+          "insert": ".codex/skills/setup-objective/agents/openai.yaml",
+          "attributes": {
+            "code": true,
+            "reference": {
+              "kind": "source",
+              "path": ".codex/skills/setup-objective/agents/openai.yaml"
+            }
+          }
+        },
+        {
+          "insert": ". The repository's .codex/config.toml is workspace configuration, not a portable installation requirement. Copying the skill does not require copying that configuration."
+        }
+      ],
+      "children": []
+    }
+  }
+}

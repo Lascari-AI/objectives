@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "id": "doc-3ee138c25a5d15c4fe3b5768f194a3c1",
+  "title": "Create and Resume an Objective",
+  "root": "root",
+  "blocks": {
+    "root": {
+      "id": "root",
+      "type": "paragraph",
+      "props": {},
+      "children": [
+        "40-guides-1",
+        "40-guides-2",
+        "40-guides-3",
+        "40-guides-4",
+        "40-guides-5",
+        "40-guides-6",
+        "40-guides-7",
+        "40-guides-8",
+        "40-guides-9",
+        "40-guides-10",
+        "40-guides-11",
+        "40-guides-12",
+        "40-guides-13",
+        "40-guides-14",
+        "40-guides-15",
+        "40-guides-16",
+        "40-guides-17",
+        "40-guides-18",
+        "40-guides-19",
+        "40-guides-20",
+        "40-guides-21",
+        "40-guides-22",
+        "40-guides-23",
+        "40-guides-24",
+        "40-guides-25",
+        "40-guides-26",
+        "40-guides-27",
+        "40-guides-28",
+        "40-guides-29",
+        "40-guides-30",
+        "40-guides-31",
+        "40-guides-32",
+        "40-guides-33",
+        "40-guides-34"
+      ]
+    },
+    "40-guides-1": {
+      "id": "40-guides-1",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Create a small objective before using the format for an expensive run. This guides page covers setup and resumption, and defers file ownership and completion rules to the bundle design."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-2": {
+      "id": "40-guides-2",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The governing reference is "
+        },
+        {
+          "insert": "Objective Bundle and Lifecycle",
+          "attributes": {
+            "reference": {
+              "kind": "doc",
+              "path": "10-system-design"
+            }
+          }
+        },
+        {
+          "insert": ". The example below is illustrative: replace its benchmark, files, and thresholds with verified values from your own project."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-3": {
+      "id": "40-guides-3",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Make the Skill Available"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-4": {
+      "id": "40-guides-4",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Clone the objectives repository into a tools directory. You need Git and Python 3 for the two helpers. Keep the skill's references and scripts together."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-5": {
+      "id": "40-guides-5",
+      "type": "code",
+      "props": {
+        "language": "bash"
+      },
+      "text": [
+        {
+          "insert": "git clone https://github.com/Lascari-AI/objectives.git\ncd objectives\npython3 .codex/skills/setup-objective/scripts/create_objective.py --help"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-6": {
+      "id": "40-guides-6",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "For a host-neutral start, give your agent the absolute path to this checkout's .codex/skills/setup-objective/SKILL.md and ask it to use the skill in your target repository. This avoids depending on automatic skill discovery."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-7": {
+      "id": "40-guides-7",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "For repository-local Codex discovery, copy the complete setup-objective folder into your target project's .codex/skills/ directory when that destination is absent. Follow the client's skill reload behavior. Do not copy this repository's full .codex/config.toml."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-8": {
+      "id": "40-guides-8",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Define the Outcome"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-9": {
+      "id": "40-guides-9",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "For example, suppose a parser has a repeatable benchmark and output-equivalence test. Define the outcome before scaffolding: reduce median runtime by at least 15 percent on a fixed fixture, preserve parsed output, and keep peak memory within the measured baseline."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-10": {
+      "id": "40-guides-10",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Name the actual benchmark command, fixture fingerprint, baseline measurements, and files the agent may edit. If they are unknown, make discovering them the first bounded phase rather than inventing values."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-11": {
+      "id": "40-guides-11",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Create the Bundle"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-12": {
+      "id": "40-guides-12",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "From the target project's root, run the scaffolder from the cloned skill. Replace the absolute path in this example with your checkout path."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-13": {
+      "id": "40-guides-13",
+      "type": "code",
+      "props": {
+        "language": "bash"
+      },
+      "text": [
+        {
+          "insert": "python3 /absolute/path/to/objectives/.codex/skills/setup-objective/scripts/create_objective.py \\\n  parser-benchmark --title \"Reduce Parser Runtime\""
+        }
+      ],
+      "children": []
+    },
+    "40-guides-14": {
+      "id": "40-guides-14",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Expected output: Created objective bundle: objectives/parser-benchmark. The command creates eight Markdown files plus examples/.gitkeep. Review the generated folder, then ask the agent to replace every template instruction with the agreed problem, scope, evidence, and gates."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-15": {
+      "id": "40-guides-15",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Write the Goal"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-16": {
+      "id": "40-guides-16",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "This example keeps the success condition separate from the evidence required to establish it. The referenced context files must contain the real commands and baseline."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-17": {
+      "id": "40-guides-17",
+      "type": "code",
+      "props": {
+        "language": "xml"
+      },
+      "text": [
+        {
+          "insert": "<goal>\n- Reduce parser benchmark median runtime by at least 15 percent without changing parsed output or increasing peak memory.\n</goal>\n<context_refresh>\n- Read objectives/parser-benchmark/current_state.md and the relevant context files before work and after compaction.\n</context_refresh>\n<working_strategy>\n- Reproduce the fixed baseline, profile the bottleneck, change one mechanism, and compare repeated runs.\n</working_strategy>\n<success_metrics>\n- Lower median runtime with output equivalence and peak memory within the baseline.\n</success_metrics>\n<non_goals>\n- Do not change the fixture, public API, or evaluator to improve the result.\n</non_goals>\n<completion_criteria>\n- The recorded validation meets all gates in context/04_validation_and_handoff.md.\n- Preserve commands, code and fixture identities, measurements, and the final decision.\n- Update current_state.md with accepted work and any remaining limits.\n</completion_criteria>"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-18": {
+      "id": "40-guides-18",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Review Before Execution"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-19": {
+      "id": "40-guides-19",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Confirm the baseline can be reproduced and that the report names the fixed inputs and environment."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-20": {
+      "id": "40-guides-20",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Make each phase name its inputs, command, output file, gate, and failure branch."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-21": {
+      "id": "40-guides-21",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Check that forbidden shortcuts and edit boundaries are explicit."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-22": {
+      "id": "40-guides-22",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "For expensive commands, verify the runner's status, checkpoint, and resume behavior before a full run."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-23": {
+      "id": "40-guides-23",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "If supplying the goal to a length-limited host, run the validator and inspect both its count and the goal's meaning."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-24": {
+      "id": "40-guides-24",
+      "type": "code",
+      "props": {
+        "language": "bash"
+      },
+      "text": [
+        {
+          "insert": "python3 /absolute/path/to/objectives/.codex/skills/setup-objective/scripts/validate_goal_length.py \\\n  objectives/parser-benchmark/goal.md"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-25": {
+      "id": "40-guides-25",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Start and Resume"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-26": {
+      "id": "40-guides-26",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Give the agent an explicit starting instruction: read the objective's goal and current state, verify the recorded artifacts, and execute the next phase whose prerequisites are satisfied. Use the host's goal feature if desired; ordinary agent instructions can also point to the same files."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-27": {
+      "id": "40-guides-27",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Before resuming, inspect any active process and its status record. If it is healthy, monitor or reconnect using the runner's supported mechanism. If it ended, compare the checkpoint's input/config identity with the intended run before invoking the documented resume command. Never start a duplicate job merely because the earlier conversation ended."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-28": {
+      "id": "40-guides-28",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "A useful handoff identifies the last verified result, where its evidence lives, whether a process is still active, and the single next action. \"Continue optimization\" is insufficient. \"Inspect the completed benchmark comparison and reject changes that fail output equivalence\" is an actionable decision when paired with the exact artifact path."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-29": {
+      "id": "40-guides-29",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Finish or Record a Blocker"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-30": {
+      "id": "40-guides-30",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Compare the result against every completion criterion. If the 15 percent target was not achieved, report the measured result and the failed gate. Preserve useful rejected experiments. If a dependency blocks progress, record what is missing and the smallest action that would unblock it."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-31": {
+      "id": "40-guides-31",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Update objective-local state before ending the session. When a host goal is active, its status must reflect the same outcome. Do not mark an improvement objective complete because a search process reached its stop condition."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-32": {
+      "id": "40-guides-32",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Adapt the Pattern to Research"
+        }
+      ],
+      "children": []
+    },
+    "40-guides-33": {
+      "id": "40-guides-33",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "For a parameter search, replace the parser benchmark phase with baseline reproduction, a candidate matrix, cheap screening, selected full validation, and a promotion decision. Keep evaluation labels out of deployable rules. Link every accepted or rejected candidate to its config and validation artifacts."
+        }
+      ],
+      "children": []
+    },
+    "40-guides-34": {
+      "id": "40-guides-34",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The AutoHDR examples motivating the companion article include searches that rejected all candidates and a candidate-retrieval stage that passed its own gate while downstream grouping still needed work. Your objective should make both outcomes expressible without redefining success."
+        }
+      ],
+      "children": []
+    }
+  }
+}

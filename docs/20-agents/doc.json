@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "id": "doc-7a53a6cae91a534671622606511f0396",
+  "title": "Setup Objective Skill",
+  "root": "root",
+  "blocks": {
+    "root": {
+      "id": "root",
+      "type": "paragraph",
+      "props": {},
+      "children": [
+        "20-agents-1",
+        "20-agents-2",
+        "20-agents-3",
+        "20-agents-4",
+        "20-agents-5",
+        "20-agents-6",
+        "20-agents-7",
+        "20-agents-8",
+        "20-agents-9",
+        "20-agents-10",
+        "20-agents-11",
+        "20-agents-12",
+        "20-agents-13",
+        "20-agents-14",
+        "20-agents-15",
+        "20-agents-16",
+        "20-agents-17",
+        "20-agents-18",
+        "20-agents-19"
+      ]
+    },
+    "20-agents-1": {
+      "id": "20-agents-1",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "setup-objective is an authoring and maintenance skill for the agent already working in the repository. It gives that agent a file convention, writing guidance, and helpers rather than launching an independent worker."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-2": {
+      "id": "20-agents-2",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Inputs and Authority"
+        }
+      ],
+      "children": []
+    },
+    "20-agents-3": {
+      "id": "20-agents-3",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The agent reads the user's outcome, existing objectives, repository instructions, active state, and relevant source evidence. It preserves established objective names and unrelated work. A legacy top-level CURRENT_STATE.md is context to sort, not permission to rewrite the whole project history."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-4": {
+      "id": "20-agents-4",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The owning skill is "
+        },
+        {
+          "insert": ".codex/skills/setup-objective/SKILL.md",
+          "attributes": {
+            "code": true,
+            "reference": {
+              "kind": "source",
+              "path": ".codex/skills/setup-objective/SKILL.md"
+            }
+          }
+        },
+        {
+          "insert": ". Its detailed authoring rules live in "
+        },
+        {
+          "insert": ".codex/skills/setup-objective/references/objective_authoring.md",
+          "attributes": {
+            "code": true,
+            "reference": {
+              "kind": "source",
+              "path": ".codex/skills/setup-objective/references/objective_authoring.md"
+            }
+          }
+        },
+        {
+          "insert": "."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-5": {
+      "id": "20-agents-5",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Authoring Workflow"
+        }
+      ],
+      "children": []
+    },
+    "20-agents-6": {
+      "id": "20-agents-6",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Inspect existing objectives and identify whether this request creates a new outcome or continues an existing one."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-7": {
+      "id": "20-agents-7",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Scaffold a new bundle with a stable lowercase hyphenated slug, then replace generic instructions with project-specific inputs, commands, artifacts, and gates."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-8": {
+      "id": "20-agents-8",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Keep the goal concise and move detailed background and phase contracts into context. Preserve enough specificity for a fresh session to act."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-9": {
+      "id": "20-agents-9",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "For expensive work, define observability, interruption, resume, and active-run handoff before the run begins."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-10": {
+      "id": "20-agents-10",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Refresh objective-local current state at the start, after milestones, and before handoff or completion."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-11": {
+      "id": "20-agents-11",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Research and Optimization"
+        }
+      ],
+      "children": []
+    },
+    "20-agents-12": {
+      "id": "20-agents-12",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The working plan should reproduce the baseline, record candidate variables, use cheap proxies for screening, and validate selected candidates against the real outcome. Include anchors and near misses so the search does not select only the highest proxy score."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-13": {
+      "id": "20-agents-13",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "When visual errors matter, observations should become testable feature hypotheses. Truth labels, filenames, shard identities, and hand-reviewed labels may support measurement, but must not become production predicates."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-14": {
+      "id": "20-agents-14",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The reusable strategy guidance is "
+        },
+        {
+          "insert": ".codex/skills/setup-objective/references/known_optimization_strategies/README.md",
+          "attributes": {
+            "code": true,
+            "reference": {
+              "kind": "source",
+              "path": ".codex/skills/setup-objective/references/known_optimization_strategies/README.md"
+            }
+          }
+        },
+        {
+          "insert": ". Long-run requirements are in "
+        },
+        {
+          "insert": ".codex/skills/setup-objective/references/long_running_handoff_and_scripts.md",
+          "attributes": {
+            "code": true,
+            "reference": {
+              "kind": "source",
+              "path": ".codex/skills/setup-objective/references/long_running_handoff_and_scripts.md"
+            }
+          }
+        },
+        {
+          "insert": "."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-15": {
+      "id": "20-agents-15",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Outputs"
+        }
+      ],
+      "children": []
+    },
+    "20-agents-16": {
+      "id": "20-agents-16",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The result is a concrete objective bundle with a bounded outcome, executable phases, evidence requirements, and an honest current-state record. If setup leaves open questions that affect validity, identify them before execution rather than filling them with assumptions."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-17": {
+      "id": "20-agents-17",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Host Integration"
+        }
+      ],
+      "children": []
+    },
+    "20-agents-18": {
+      "id": "20-agents-18",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "A host that discovers SKILL.md packages can expose setup-objective through its normal skill mechanism. The files can also be supplied explicitly by path to an agent that reads repository files. Client discovery, permissions, continuation, and budgets belong to that host."
+        }
+      ],
+      "children": []
+    },
+    "20-agents-19": {
+      "id": "20-agents-19",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Codex /goal text is one possible consumer of goal.md. The local validator enforces the limit encoded by this repository. Neither Python helper creates a host goal or changes its runtime status."
+        }
+      ],
+      "children": []
+    }
+  }
+}

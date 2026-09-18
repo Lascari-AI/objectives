@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "id": "doc-75060c46da71b02bbf7fe56083935323",
+  "title": "Objective Bundle and Lifecycle",
+  "root": "root",
+  "blocks": {
+    "root": {
+      "id": "root",
+      "type": "paragraph",
+      "props": {},
+      "children": [
+        "10-system-design-1",
+        "10-system-design-2",
+        "10-system-design-3",
+        "10-system-design-4",
+        "10-system-design-5",
+        "10-system-design-6",
+        "10-system-design-7",
+        "10-system-design-8",
+        "10-system-design-9",
+        "10-system-design-10",
+        "10-system-design-11",
+        "10-system-design-12",
+        "10-system-design-13",
+        "10-system-design-14",
+        "10-system-design-15",
+        "10-system-design-16",
+        "10-system-design-17",
+        "10-system-design-18",
+        "10-system-design-19",
+        "10-system-design-20",
+        "10-system-design-21",
+        "10-system-design-22",
+        "10-system-design-23"
+      ]
+    },
+    "10-system-design-1": {
+      "id": "10-system-design-1",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "An objective separates stable intent from changing execution state. The goal and context define what counts as valid work, while current_state.md points to the latest durable evidence and next action."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-2": {
+      "id": "10-system-design-2",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Structure"
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-3": {
+      "id": "10-system-design-3",
+      "type": "file-tree",
+      "props": {
+        "entries": [
+          {
+            "path": "objectives/example/README.md",
+            "note": "entry point and context map"
+          },
+          {
+            "path": "objectives/example/goal.md",
+            "note": "outcome and completion criteria"
+          },
+          {
+            "path": "objectives/example/current_state.md",
+            "note": "current evidence and handoff"
+          },
+          {
+            "path": "objectives/example/context/00_problem.md",
+            "note": "baseline, failure modes, prior evidence"
+          },
+          {
+            "path": "objectives/example/context/01_constraints.md",
+            "note": "validity rules and forbidden shortcuts"
+          },
+          {
+            "path": "objectives/example/context/02_implementation_scope.md",
+            "note": "owned files and read-only boundaries"
+          },
+          {
+            "path": "objectives/example/context/03_working_plan.md",
+            "note": "phases, outputs, gates, recovery"
+          },
+          {
+            "path": "objectives/example/context/04_validation_and_handoff.md",
+            "note": "acceptance and evidence requirements"
+          },
+          {
+            "path": "objectives/example/examples/",
+            "note": "optional concrete inputs or examples"
+          }
+        ]
+      },
+      "children": []
+    },
+    "10-system-design-4": {
+      "id": "10-system-design-4",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The scaffold creates eight Markdown files and, by default, an examples directory. Scripts, reports, caches, and run artifacts are added only when the objective needs them."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-5": {
+      "id": "10-system-design-5",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "The Goal"
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-6": {
+      "id": "10-system-design-6",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "goal.md uses six pseudo-XML sections: goal, context_refresh, working_strategy, success_metrics, non_goals, and completion_criteria. This is a reading convention for agents, not a parsed runtime schema."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-7": {
+      "id": "10-system-design-7",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Success metrics describe useful progress. Completion criteria define the outcome that must be proven. A reduction in candidate count can satisfy a stage metric while the final pipeline still fails validation."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-8": {
+      "id": "10-system-design-8",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "The Phase Contract"
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-9": {
+      "id": "10-system-design-9",
+      "type": "structured-table",
+      "props": {
+        "columns": [
+          "Field",
+          "Question It Answers"
+        ],
+        "rows": [
+          [
+            "Objective",
+            "What does this phase establish?"
+          ],
+          [
+            "Inputs",
+            "Which code, data, configs, and previous artifacts does it use?"
+          ],
+          [
+            "Process",
+            "Which concrete actions or commands run?"
+          ],
+          [
+            "Outputs",
+            "Which files or decisions survive the session?"
+          ],
+          [
+            "Gate",
+            "What evidence permits the next phase?"
+          ],
+          [
+            "Failure handling",
+            "What happens when evidence is missing or the gate fails?"
+          ]
+        ]
+      },
+      "children": []
+    },
+    "10-system-design-10": {
+      "id": "10-system-design-10",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Each phase's output should become an input to another phase or a final decision. Replace vague tasks such as \"validate the candidate\" with the dataset, command, expected artifact, and acceptance condition."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-11": {
+      "id": "10-system-design-11",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Execution and Handoff"
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-12": {
+      "id": "10-system-design-12",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "At the start of work, after compaction, and before resumption, the agent rereads the goal, current state, and context relevant to the next phase. It checks the recorded evidence against disk before starting new work."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-13": {
+      "id": "10-system-design-13",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Update current_state.md after meaningful milestones and before a handoff. Record completed decisions, active work, the next command, unresolved risks, and important paths. Summarize decisions and link logs instead of copying terminal history into state."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-14": {
+      "id": "10-system-design-14",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "If a process remains active, record its command, working directory, PID or session where available, start time, status/log/checkpoint paths, active config, and safest next action. Check that the process is still the same job before controlling it."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-15": {
+      "id": "10-system-design-15",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Long-Running Work"
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-16": {
+      "id": "10-system-design-16",
+      "type": "structured-table",
+      "props": {
+        "columns": [
+          "Artifact",
+          "Responsibility"
+        ],
+        "rows": [
+          [
+            "run_manifest.json",
+            "Identity, command, code/input/config fingerprints, output paths, and resume command."
+          ],
+          [
+            "status.json and progress.jsonl",
+            "Current phase, completed units, heartbeat, and progress history."
+          ],
+          [
+            "run.log.jsonl",
+            "Warnings, errors, checkpoint writes, and accepted or rejected control changes."
+          ],
+          [
+            "checkpoint.json",
+            "Completed units and enough identity to reject an incompatible resume."
+          ],
+          [
+            "outputs/, partial/, rejected/",
+            "Separate accepted evidence from incomplete or invalid output."
+          ]
+        ]
+      },
+      "children": []
+    },
+    "10-system-design-17": {
+      "id": "10-system-design-17",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "These artifacts are a runner contract, not files generated by the scaffold. A long-running runner should checkpoint after bounded units, atomically replace accepted state, and validate input/config compatibility on resume. If a property cannot be provided, document the limitation and a practical recovery path."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-18": {
+      "id": "10-system-design-18",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Controls such as concurrency or stop-after-current-unit may change while a run is active if the runner supports and validates them. Changes to inputs, algorithm, or acceptance rules change result meaning and require explicit lineage or a new run."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-19": {
+      "id": "10-system-design-19",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Completion"
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-20": {
+      "id": "10-system-design-20",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Map every completion criterion to evidence before declaring the objective achieved. A failed search can end with a useful rejection report without satisfying an improvement goal. Record that distinction and the next hypothesis or blocker."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-21": {
+      "id": "10-system-design-21",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "A successful stage is not permission to silently redefine an overarching goal. Record any approved scope change explicitly. Native host goal status and Markdown state are separate and should describe the same outcome."
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-22": {
+      "id": "10-system-design-22",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Why"
+        }
+      ],
+      "children": []
+    },
+    "10-system-design-23": {
+      "id": "10-system-design-23",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Stable intent prevents each session from inventing a new definition of success. Compact state makes continuation cheap. Durable artifacts allow a reviewer to check the decision after the conversation that produced it is gone."
+        }
+      ],
+      "children": []
+    }
+  }
+}
