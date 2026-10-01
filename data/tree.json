@@ -1,0 +1,29 @@
+{
+  "tree": [
+    {
+      "name": "00-foundation",
+      "path": "00-foundation",
+      "kind": "bundle"
+    },
+    {
+      "name": "10-system-design",
+      "path": "10-system-design",
+      "kind": "bundle"
+    },
+    {
+      "name": "20-agents",
+      "path": "20-agents",
+      "kind": "bundle"
+    },
+    {
+      "name": "30-implementation",
+      "path": "30-implementation",
+      "kind": "bundle"
+    },
+    {
+      "name": "40-guides",
+      "path": "40-guides",
+      "kind": "bundle"
+    }
+  ]
+}

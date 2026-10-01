@@ -1,0 +1,628 @@
+{
+  "path": "20-agents",
+  "document_path": "docs/20-agents",
+  "doc": {
+    "schemaVersion": 1,
+    "id": "doc-7a53a6cae91a534671622606511f0396",
+    "title": "Setup Objective Skill",
+    "root": "root",
+    "blocks": {
+      "root": {
+        "id": "root",
+        "type": "paragraph",
+        "props": {},
+        "children": [
+          "a-open",
+          "a-h-in",
+          "a-in-lead",
+          "a-in1",
+          "a-in2",
+          "a-in3",
+          "a-in4",
+          "a-h-wf",
+          "a-wf-lead",
+          "a-wf1",
+          "a-wf2",
+          "a-wf3",
+          "a-wf4",
+          "a-wf5",
+          "a-h-opt",
+          "a-opt-lead",
+          "a-opt1",
+          "a-opt2",
+          "a-opt3",
+          "a-opt4",
+          "a-opt5",
+          "a-h-out",
+          "a-out-lead",
+          "a-out1",
+          "a-out2",
+          "a-h-host",
+          "a-host-lead",
+          "a-host1",
+          "a-host2",
+          "a-host3",
+          "a-host4"
+        ]
+      },
+      "a-open": {
+        "id": "a-open",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "setup-objective is an authoring and maintenance skill for the agent already working in the repository. It gives that agent a file convention, writing guidance, and two helper scripts. It does not launch a separate worker."
+          }
+        ],
+        "children": []
+      },
+      "a-h-in": {
+        "id": "a-h-in",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Inputs and Authority"
+          }
+        ],
+        "children": []
+      },
+      "a-in-lead": {
+        "id": "a-in-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "The agent starts from what already exists in the repository."
+          }
+        ],
+        "children": []
+      },
+      "a-in1": {
+        "id": "a-in1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "It reads the user's outcome, existing objectives, repository instructions, and any active state file."
+          }
+        ],
+        "children": []
+      },
+      "a-in2": {
+        "id": "a-in2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "It preserves established objective names and unrelated work."
+          }
+        ],
+        "children": []
+      },
+      "a-in3": {
+        "id": "a-in3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "It treats a top-level CURRENT_STATE.md as legacy index material."
+          }
+        ],
+        "children": [
+          "a-in3a",
+          "a-in3b"
+        ]
+      },
+      "a-in3a": {
+        "id": "a-in3a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The agent moves only the relevant state into the objective's own current_state.md."
+          }
+        ],
+        "children": []
+      },
+      "a-in3b": {
+        "id": "a-in3b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "It leaves unrelated content alone unless the user asks for a rewrite."
+          }
+        ],
+        "children": []
+      },
+      "a-in4": {
+        "id": "a-in4",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The skill is defined in "
+          },
+          {
+            "insert": ".codex/skills/setup-objective/SKILL.md",
+            "attributes": {
+              "reference": {
+                "kind": "source",
+                "path": ".codex/skills/setup-objective/SKILL.md"
+              }
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": [
+          "a-in4a"
+        ]
+      },
+      "a-in4a": {
+        "id": "a-in4a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Detailed authoring rules live in "
+          },
+          {
+            "insert": ".codex/skills/setup-objective/references/objective_authoring.md",
+            "attributes": {
+              "reference": {
+                "kind": "source",
+                "path": ".codex/skills/setup-objective/references/objective_authoring.md"
+              }
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": []
+      },
+      "a-h-wf": {
+        "id": "a-h-wf",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Authoring Workflow"
+          }
+        ],
+        "children": []
+      },
+      "a-wf-lead": {
+        "id": "a-wf-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "The agent follows the same steps for every objective."
+          }
+        ],
+        "children": []
+      },
+      "a-wf1": {
+        "id": "a-wf1",
+        "type": "list-item",
+        "props": {
+          "ordered": true
+        },
+        "text": [
+          {
+            "insert": "Inspect existing objectives and decide whether the request is new work or a continuation."
+          }
+        ],
+        "children": []
+      },
+      "a-wf2": {
+        "id": "a-wf2",
+        "type": "list-item",
+        "props": {
+          "ordered": true
+        },
+        "text": [
+          {
+            "insert": "Scaffold a new bundle with a stable lowercase hyphenated slug. Then replace every template bullet with project-specific inputs, commands, artifacts, and gates."
+          }
+        ],
+        "children": []
+      },
+      "a-wf3": {
+        "id": "a-wf3",
+        "type": "list-item",
+        "props": {
+          "ordered": true
+        },
+        "text": [
+          {
+            "insert": "Keep goal.md under 4,000 characters and move background, research notes, and phase plans into context/."
+          }
+        ],
+        "children": []
+      },
+      "a-wf4": {
+        "id": "a-wf4",
+        "type": "list-item",
+        "props": {
+          "ordered": true
+        },
+        "text": [
+          {
+            "insert": "For runs longer than a few minutes, define logs, status, checkpoints, resume, and active-run handoff before the run starts."
+          }
+        ],
+        "children": []
+      },
+      "a-wf5": {
+        "id": "a-wf5",
+        "type": "list-item",
+        "props": {
+          "ordered": true
+        },
+        "text": [
+          {
+            "insert": "Update current_state.md at the start, after milestones, before handoff or compaction, and before the final response."
+          }
+        ],
+        "children": []
+      },
+      "a-h-opt": {
+        "id": "a-h-opt",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Research and Optimization"
+          }
+        ],
+        "children": []
+      },
+      "a-opt-lead": {
+        "id": "a-opt-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "For optimization work, the skill treats experiment layout as part of the objective design."
+          }
+        ],
+        "children": []
+      },
+      "a-opt1": {
+        "id": "a-opt1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The working plan reproduces the baseline before it changes behavior."
+          }
+        ],
+        "children": []
+      },
+      "a-opt2": {
+        "id": "a-opt2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Candidate variables go in a "
+          },
+          {
+            "insert": "config_matrix.csv",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " or an equivalent manifest."
+          }
+        ],
+        "children": []
+      },
+      "a-opt3": {
+        "id": "a-opt3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Cheap proxy sweeps only screen candidates. Selected anchors, Pareto candidates, and near-misses get full validation."
+          }
+        ],
+        "children": [
+          "a-opt3a"
+        ]
+      },
+      "a-opt3a": {
+        "id": "a-opt3a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Anchors and near-misses keep the search from picking only the top proxy score."
+          }
+        ],
+        "children": []
+      },
+      "a-opt4": {
+        "id": "a-opt4",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Visual findings become deployable feature hypotheses."
+          }
+        ],
+        "children": [
+          "a-opt4a"
+        ]
+      },
+      "a-opt4a": {
+        "id": "a-opt4a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Truth labels, filenames, shard identity, and hand-reviewed labels support measurement only. They never become production rules."
+          }
+        ],
+        "children": []
+      },
+      "a-opt5": {
+        "id": "a-opt5",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Strategy guidance lives in "
+          },
+          {
+            "insert": ".codex/skills/setup-objective/references/known_optimization_strategies/README.md",
+            "attributes": {
+              "reference": {
+                "kind": "source",
+                "path": ".codex/skills/setup-objective/references/known_optimization_strategies/README.md"
+              }
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": [
+          "a-opt5a"
+        ]
+      },
+      "a-opt5a": {
+        "id": "a-opt5a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Long-run requirements live in "
+          },
+          {
+            "insert": ".codex/skills/setup-objective/references/long_running_handoff_and_scripts.md",
+            "attributes": {
+              "reference": {
+                "kind": "source",
+                "path": ".codex/skills/setup-objective/references/long_running_handoff_and_scripts.md"
+              }
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": []
+      },
+      "a-h-out": {
+        "id": "a-h-out",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Outputs"
+          }
+        ],
+        "children": []
+      },
+      "a-out-lead": {
+        "id": "a-out-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "The result is an objective bundle that a fresh agent can execute."
+          }
+        ],
+        "children": []
+      },
+      "a-out1": {
+        "id": "a-out1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The bundle has a bounded outcome, explicit stopping criteria, executable phases, and an honest current state."
+          }
+        ],
+        "children": []
+      },
+      "a-out2": {
+        "id": "a-out2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If setup leaves open questions that affect validity, the agent raises them before execution instead of filling them with assumptions."
+          }
+        ],
+        "children": []
+      },
+      "a-h-host": {
+        "id": "a-h-host",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Host Integration"
+          }
+        ],
+        "children": []
+      },
+      "a-host-lead": {
+        "id": "a-host-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "The skill is plain files, so any agent that reads the repository can use it."
+          }
+        ],
+        "children": []
+      },
+      "a-host1": {
+        "id": "a-host1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "A host that discovers SKILL.md packages exposes setup-objective through its normal skill mechanism."
+          }
+        ],
+        "children": []
+      },
+      "a-host2": {
+        "id": "a-host2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "You can also give the agent the path to SKILL.md directly."
+          }
+        ],
+        "children": []
+      },
+      "a-host3": {
+        "id": "a-host3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The host owns discovery, permissions, continuation, and budgets."
+          }
+        ],
+        "children": []
+      },
+      "a-host4": {
+        "id": "a-host4",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Codex "
+          },
+          {
+            "insert": "/goal",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " is one consumer of goal.md."
+          }
+        ],
+        "children": [
+          "a-host4a",
+          "a-host4b"
+        ]
+      },
+      "a-host4a": {
+        "id": "a-host4a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The validator enforces the 4,000-character limit."
+          }
+        ],
+        "children": []
+      },
+      "a-host4b": {
+        "id": "a-host4b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Neither helper creates a host goal or changes its status."
+          }
+        ],
+        "children": []
+      }
+    }
+  },
+  "doc_hash": "963efd3456cccb373de0150fffb040a51bbc40c9012d926378496631d640d5e3",
+  "annotations": null,
+  "annotations_hash": null
+}

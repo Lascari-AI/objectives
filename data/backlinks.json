@@ -1,0 +1,70 @@
+{
+  "10-system-design": [
+    {
+      "sourcePath": "00-foundation/doc.json",
+      "sourceBlockId": "f-n2",
+      "targetKind": "doc",
+      "targetPath": "10-system-design",
+      "targetSymbol": null,
+      "targetLine": null,
+      "targetSection": null,
+      "updatedAt": "2026-10-01T14:02:14.727Z"
+    },
+    {
+      "sourcePath": "40-guides/doc.json",
+      "sourceBlockId": "g-open",
+      "targetKind": "doc",
+      "targetPath": "10-system-design",
+      "targetSymbol": null,
+      "targetLine": null,
+      "targetSection": null,
+      "updatedAt": "2026-10-01T14:02:14.728Z"
+    },
+    {
+      "sourcePath": "30-implementation/doc.json",
+      "sourceBlockId": "i-ctx",
+      "targetKind": "doc",
+      "targetPath": "10-system-design",
+      "targetSymbol": null,
+      "targetLine": null,
+      "targetSection": null,
+      "updatedAt": "2026-10-01T14:02:14.728Z"
+    }
+  ],
+  "20-agents": [
+    {
+      "sourcePath": "00-foundation/doc.json",
+      "sourceBlockId": "f-n3",
+      "targetKind": "doc",
+      "targetPath": "20-agents",
+      "targetSymbol": null,
+      "targetLine": null,
+      "targetSection": null,
+      "updatedAt": "2026-10-01T14:02:14.727Z"
+    }
+  ],
+  "30-implementation": [
+    {
+      "sourcePath": "00-foundation/doc.json",
+      "sourceBlockId": "f-n4",
+      "targetKind": "doc",
+      "targetPath": "30-implementation",
+      "targetSymbol": null,
+      "targetLine": null,
+      "targetSection": null,
+      "updatedAt": "2026-10-01T14:02:14.727Z"
+    }
+  ],
+  "40-guides": [
+    {
+      "sourcePath": "00-foundation/doc.json",
+      "sourceBlockId": "f-n1",
+      "targetKind": "doc",
+      "targetPath": "40-guides",
+      "targetSymbol": null,
+      "targetLine": null,
+      "targetSection": null,
+      "updatedAt": "2026-10-01T14:02:14.727Z"
+    }
+  ]
+}

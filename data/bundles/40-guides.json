@@ -1,0 +1,1015 @@
+{
+  "path": "40-guides",
+  "document_path": "docs/40-guides",
+  "doc": {
+    "schemaVersion": 1,
+    "id": "doc-3ee138c25a5d15c4fe3b5768f194a3c1",
+    "title": "Create and Resume an Objective",
+    "root": "root",
+    "blocks": {
+      "root": {
+        "id": "root",
+        "type": "paragraph",
+        "props": {},
+        "children": [
+          "g-open",
+          "g-note",
+          "g-h-avail",
+          "g-av-lead",
+          "g-av1",
+          "g-av2",
+          "40-guides-5",
+          "g-av3",
+          "g-av4",
+          "g-h-stop",
+          "g-sc-lead",
+          "g-sc1",
+          "g-sc2",
+          "g-sc3",
+          "g-sc4",
+          "g-h-create",
+          "g-cr-lead",
+          "40-guides-13",
+          "g-cr1",
+          "g-cr2",
+          "g-h-goal",
+          "g-gl-lead",
+          "40-guides-17",
+          "g-gl1",
+          "g-gl2",
+          "g-h-review",
+          "g-rv-lead",
+          "40-guides-19",
+          "40-guides-20",
+          "40-guides-21",
+          "40-guides-22",
+          "40-guides-23",
+          "40-guides-24",
+          "g-h-start",
+          "g-sr-lead",
+          "g-sr1",
+          "g-sr2",
+          "g-sr3",
+          "g-h-fin",
+          "g-fn-lead",
+          "g-fn1",
+          "g-fn2",
+          "g-fn3",
+          "g-fn4",
+          "g-fn5",
+          "g-h-res",
+          "g-rs-lead",
+          "g-rs1",
+          "g-rs2",
+          "g-rs3",
+          "g-rs4"
+        ]
+      },
+      "g-open": {
+        "id": "g-open",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "Create a small objective before you use the format for an expensive run. This guide covers setup, a worked example, and resuming a run. File ownership and completion rules live in "
+          },
+          {
+            "insert": "Objective Bundle and Lifecycle",
+            "attributes": {
+              "reference": {
+                "kind": "doc",
+                "path": "10-system-design"
+              }
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": []
+      },
+      "g-note": {
+        "id": "g-note",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "The example is illustrative. Replace its benchmark, files, and thresholds with verified values from your own project."
+          }
+        ],
+        "children": []
+      },
+      "g-h-avail": {
+        "id": "g-h-avail",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Make the Skill Available"
+          }
+        ],
+        "children": []
+      },
+      "g-av-lead": {
+        "id": "g-av-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "Clone the objectives repository into a tools directory."
+          }
+        ],
+        "children": []
+      },
+      "g-av1": {
+        "id": "g-av1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "You need Git and Python 3 for the two helpers."
+          }
+        ],
+        "children": []
+      },
+      "g-av2": {
+        "id": "g-av2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Keep the skill's references and scripts together."
+          }
+        ],
+        "children": []
+      },
+      "40-guides-5": {
+        "id": "40-guides-5",
+        "type": "code",
+        "props": {
+          "language": "bash"
+        },
+        "text": [
+          {
+            "insert": "git clone https://github.com/Lascari-AI/objectives.git\ncd objectives\npython3 .codex/skills/setup-objective/scripts/create_objective.py --help"
+          }
+        ],
+        "children": []
+      },
+      "g-av3": {
+        "id": "g-av3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "For any host, give your agent the absolute path to this checkout's "
+          },
+          {
+            "insert": ".codex/skills/setup-objective/SKILL.md",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " and ask it to use the skill in your target repository."
+          }
+        ],
+        "children": [
+          "g-av3a"
+        ]
+      },
+      "g-av3a": {
+        "id": "g-av3a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "This start does not depend on automatic skill discovery."
+          }
+        ],
+        "children": []
+      },
+      "g-av4": {
+        "id": "g-av4",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "For repository-local Codex discovery, copy the whole setup-objective folder into your project's "
+          },
+          {
+            "insert": ".codex/skills/",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " directory."
+          }
+        ],
+        "children": [
+          "g-av4a",
+          "g-av4b"
+        ]
+      },
+      "g-av4a": {
+        "id": "g-av4a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Follow your client's skill reload behavior."
+          }
+        ],
+        "children": []
+      },
+      "g-av4b": {
+        "id": "g-av4b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Do not copy this repository's "
+          },
+          {
+            "insert": ".codex/config.toml",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": []
+      },
+      "g-h-stop": {
+        "id": "g-h-stop",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Define the Stopping Criteria"
+          }
+        ],
+        "children": []
+      },
+      "g-sc-lead": {
+        "id": "g-sc-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "Write the stopping criteria before you scaffold."
+          }
+        ],
+        "children": []
+      },
+      "g-sc1": {
+        "id": "g-sc1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Suppose a parser has a repeatable benchmark and an output-equivalence test."
+          }
+        ],
+        "children": []
+      },
+      "g-sc2": {
+        "id": "g-sc2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Name every gate the result must clear."
+          }
+        ],
+        "children": [
+          "g-sc2a",
+          "g-sc2b",
+          "g-sc2c"
+        ]
+      },
+      "g-sc2a": {
+        "id": "g-sc2a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Median runtime drops by at least 15 percent on a fixed fixture."
+          }
+        ],
+        "children": []
+      },
+      "g-sc2b": {
+        "id": "g-sc2b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Parsed output stays identical."
+          }
+        ],
+        "children": []
+      },
+      "g-sc2c": {
+        "id": "g-sc2c",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Peak memory stays within the measured baseline."
+          }
+        ],
+        "children": []
+      },
+      "g-sc3": {
+        "id": "g-sc3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "A single target such as \"make it faster\" lets the agent stop at the first improvement."
+          }
+        ],
+        "children": []
+      },
+      "g-sc4": {
+        "id": "g-sc4",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Name the benchmark command, fixture fingerprint, baseline measurements, and the files the agent may edit."
+          }
+        ],
+        "children": [
+          "g-sc4a"
+        ]
+      },
+      "g-sc4a": {
+        "id": "g-sc4a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If any are unknown, make finding them the first phase instead of inventing values."
+          }
+        ],
+        "children": []
+      },
+      "g-h-create": {
+        "id": "g-h-create",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Create the Bundle"
+          }
+        ],
+        "children": []
+      },
+      "g-cr-lead": {
+        "id": "g-cr-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "Run the scaffolder from your target project's root. Replace the absolute path with your checkout path."
+          }
+        ],
+        "children": []
+      },
+      "40-guides-13": {
+        "id": "40-guides-13",
+        "type": "code",
+        "props": {
+          "language": "bash"
+        },
+        "text": [
+          {
+            "insert": "python3 /absolute/path/to/objectives/.codex/skills/setup-objective/scripts/create_objective.py \\\n  parser-benchmark --title \"Reduce Parser Runtime\""
+          }
+        ],
+        "children": []
+      },
+      "g-cr1": {
+        "id": "g-cr1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The script prints "
+          },
+          {
+            "insert": "Created objective bundle: objectives/parser-benchmark",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": [
+          "g-cr1a"
+        ]
+      },
+      "g-cr1a": {
+        "id": "g-cr1a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "It creates eight Markdown files plus "
+          },
+          {
+            "insert": "examples/.gitkeep",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": []
+      },
+      "g-cr2": {
+        "id": "g-cr2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Review the folder, then have the agent replace every template bullet with the agreed problem, scope, evidence, and gates."
+          }
+        ],
+        "children": []
+      },
+      "g-h-goal": {
+        "id": "g-h-goal",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Write the Goal"
+          }
+        ],
+        "children": []
+      },
+      "g-gl-lead": {
+        "id": "g-gl-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "The goal holds the stopping criteria and points to the files that hold everything else."
+          }
+        ],
+        "children": []
+      },
+      "40-guides-17": {
+        "id": "40-guides-17",
+        "type": "code",
+        "props": {
+          "language": "xml"
+        },
+        "text": [
+          {
+            "insert": "<goal>\n- Reduce parser benchmark median runtime by at least 15 percent without changing parsed output or increasing peak memory.\n</goal>\n<context_refresh>\n- Reread objectives/parser-benchmark/goal.md.\n- Reread objectives/parser-benchmark/current_state.md.\n- Reread the relevant objectives/parser-benchmark/context/*.md files.\n- Reread these files at the start of work and after every compaction or resume.\n</context_refresh>\n<working_strategy>\n- Reproduce the fixed baseline, profile the bottleneck, change one mechanism, and compare repeated runs.\n</working_strategy>\n<success_metrics>\n- Lower median runtime with output equivalence and peak memory within the baseline.\n</success_metrics>\n<non_goals>\n- Do not change the fixture, public API, or evaluator to improve the result.\n</non_goals>\n<completion_criteria>\n- Median runtime on the fixed fixture is at least 15 percent below the recorded baseline.\n- Parsed output is identical to the baseline output.\n- Peak memory is at or below the measured baseline.\n- Commands, code and fixture identities, measurements, and the final decision are recorded.\n- current_state.md records accepted work and any remaining limits.\n</completion_criteria>"
+          }
+        ],
+        "children": []
+      },
+      "g-gl1": {
+        "id": "g-gl1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The context files must hold the real commands, fixture, and baseline."
+          }
+        ],
+        "children": []
+      },
+      "g-gl2": {
+        "id": "g-gl2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Success metrics track progress. Completion criteria define done, with one line per gate."
+          }
+        ],
+        "children": []
+      },
+      "g-h-review": {
+        "id": "g-h-review",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Review Before Execution"
+          }
+        ],
+        "children": []
+      },
+      "g-rv-lead": {
+        "id": "g-rv-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "Check the bundle before the first long run."
+          }
+        ],
+        "children": []
+      },
+      "40-guides-19": {
+        "id": "40-guides-19",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Confirm the baseline can be reproduced and that the report names the fixed inputs and environment."
+          }
+        ],
+        "children": []
+      },
+      "40-guides-20": {
+        "id": "40-guides-20",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Make each phase name its inputs, command, output file, gate, and failure branch."
+          }
+        ],
+        "children": []
+      },
+      "40-guides-21": {
+        "id": "40-guides-21",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Check that forbidden shortcuts and edit boundaries are explicit."
+          }
+        ],
+        "children": []
+      },
+      "40-guides-22": {
+        "id": "40-guides-22",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "For expensive commands, verify the runner's status, checkpoint, and resume behavior before a full run."
+          }
+        ],
+        "children": []
+      },
+      "40-guides-23": {
+        "id": "40-guides-23",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If you hand the goal to Codex "
+          },
+          {
+            "insert": "/goal",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": ", run the validator and check the goal's meaning as well as its length."
+          }
+        ],
+        "children": []
+      },
+      "40-guides-24": {
+        "id": "40-guides-24",
+        "type": "code",
+        "props": {
+          "language": "bash"
+        },
+        "text": [
+          {
+            "insert": "python3 /absolute/path/to/objectives/.codex/skills/setup-objective/scripts/validate_goal_length.py \\\n  objectives/parser-benchmark/goal.md"
+          }
+        ],
+        "children": []
+      },
+      "g-h-start": {
+        "id": "g-h-start",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Start and Resume"
+          }
+        ],
+        "children": []
+      },
+      "g-sr-lead": {
+        "id": "g-sr-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "Tell the agent to read the objective's goal and current state, verify the recorded artifacts, and run the next phase whose prerequisites are met."
+          }
+        ],
+        "children": []
+      },
+      "g-sr1": {
+        "id": "g-sr1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Use your host's goal mode if it has one. Plain agent instructions can point to the same files."
+          }
+        ],
+        "children": []
+      },
+      "g-sr2": {
+        "id": "g-sr2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Before resuming, check for an active process and its status record."
+          }
+        ],
+        "children": [
+          "g-sr2a",
+          "g-sr2b",
+          "g-sr2c"
+        ]
+      },
+      "g-sr2a": {
+        "id": "g-sr2a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If the process is healthy, monitor it through the runner's status command."
+          }
+        ],
+        "children": []
+      },
+      "g-sr2b": {
+        "id": "g-sr2b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If it ended, compare the checkpoint's input and config identity with the intended run, then run the documented resume command."
+          }
+        ],
+        "children": []
+      },
+      "g-sr2c": {
+        "id": "g-sr2c",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Do not start a duplicate job because the earlier conversation ended."
+          }
+        ],
+        "children": []
+      },
+      "g-sr3": {
+        "id": "g-sr3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "A useful handoff names the last verified result, where its evidence lives, whether a process is active, and the single next action."
+          }
+        ],
+        "children": [
+          "g-sr3a",
+          "g-sr3b"
+        ]
+      },
+      "g-sr3a": {
+        "id": "g-sr3a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "\"Continue optimization\" is not actionable."
+          }
+        ],
+        "children": []
+      },
+      "g-sr3b": {
+        "id": "g-sr3b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "\"Inspect the completed benchmark comparison and reject changes that fail output equivalence\" is actionable when it names the artifact path."
+          }
+        ],
+        "children": []
+      },
+      "g-h-fin": {
+        "id": "g-h-fin",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Finish or Record a Blocker"
+          }
+        ],
+        "children": []
+      },
+      "g-fn-lead": {
+        "id": "g-fn-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "Compare the result against every completion criterion."
+          }
+        ],
+        "children": []
+      },
+      "g-fn1": {
+        "id": "g-fn1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If the 15 percent target was missed, report the measured result and the failed gate."
+          }
+        ],
+        "children": []
+      },
+      "g-fn2": {
+        "id": "g-fn2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Keep useful rejected experiments in the objective's workspace."
+          }
+        ],
+        "children": []
+      },
+      "g-fn3": {
+        "id": "g-fn3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If a dependency blocks progress, record what is missing and the smallest action that would unblock it."
+          }
+        ],
+        "children": []
+      },
+      "g-fn4": {
+        "id": "g-fn4",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Update current_state.md before the session ends."
+          }
+        ],
+        "children": [
+          "g-fn4a"
+        ]
+      },
+      "g-fn4a": {
+        "id": "g-fn4a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If a host goal is active, its status must match the same outcome."
+          }
+        ],
+        "children": []
+      },
+      "g-fn5": {
+        "id": "g-fn5",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Do not mark an improvement objective complete because a search reached its own stop condition."
+          }
+        ],
+        "children": []
+      },
+      "g-h-res": {
+        "id": "g-h-res",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Adapt the Pattern to Research"
+          }
+        ],
+        "children": []
+      },
+      "g-rs-lead": {
+        "id": "g-rs-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "For a parameter search, replace the benchmark phases with a research loop."
+          }
+        ],
+        "children": []
+      },
+      "g-rs1": {
+        "id": "g-rs1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The phases are baseline reproduction, a candidate matrix, cheap screening, full validation of selected candidates, and a promotion decision."
+          }
+        ],
+        "children": []
+      },
+      "g-rs2": {
+        "id": "g-rs2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Keep evaluation labels out of deployable rules."
+          }
+        ],
+        "children": []
+      },
+      "g-rs3": {
+        "id": "g-rs3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Link every accepted or rejected candidate to its config and validation artifacts."
+          }
+        ],
+        "children": []
+      },
+      "g-rs4": {
+        "id": "g-rs4",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Write stopping criteria that can record two honest outcomes without redefining success."
+          }
+        ],
+        "children": [
+          "g-rs4a",
+          "g-rs4b"
+        ]
+      },
+      "g-rs4a": {
+        "id": "g-rs4a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "A search can reject every candidate."
+          }
+        ],
+        "children": []
+      },
+      "g-rs4b": {
+        "id": "g-rs4b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "A stage can pass its own gate while the downstream result still needs work."
+          }
+        ],
+        "children": []
+      }
+    }
+  },
+  "doc_hash": "babdcab4af554e7b036a5a3b0832b382123a3d8954ca16770810b99061cd21c8",
+  "annotations": null,
+  "annotations_hash": null
+}

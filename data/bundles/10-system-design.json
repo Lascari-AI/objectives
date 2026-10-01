@@ -1,0 +1,977 @@
+{
+  "path": "10-system-design",
+  "document_path": "docs/10-system-design",
+  "doc": {
+    "schemaVersion": 1,
+    "id": "doc-75060c46da71b02bbf7fe56083935323",
+    "title": "Objective Bundle and Lifecycle",
+    "root": "root",
+    "blocks": {
+      "root": {
+        "id": "root",
+        "type": "paragraph",
+        "props": {},
+        "children": [
+          "s-open",
+          "s-h-struct",
+          "s-st-lead",
+          "10-system-design-3",
+          "s-st1",
+          "s-st2",
+          "s-h-goal",
+          "s-g-lead",
+          "s-g1",
+          "s-g2",
+          "s-g3",
+          "s-g4",
+          "s-h-phase",
+          "s-p-lead",
+          "10-system-design-9",
+          "s-p1",
+          "s-p2",
+          "s-h-exec",
+          "s-e-lead",
+          "s-e1",
+          "s-e2",
+          "s-e3",
+          "s-h-long",
+          "s-l-lead",
+          "10-system-design-16",
+          "s-l1",
+          "s-l2",
+          "s-l3",
+          "s-l4",
+          "s-h-done",
+          "s-d-lead",
+          "s-d1",
+          "s-d2",
+          "s-d3",
+          "s-h-why",
+          "s-w-lead",
+          "s-w1",
+          "s-w2",
+          "s-w3"
+        ]
+      },
+      "s-open": {
+        "id": "s-open",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "An objective separates stable intent from changing state. The goal and context files define valid work. "
+          },
+          {
+            "insert": "current_state.md",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " records the latest evidence and the next action."
+          }
+        ],
+        "children": []
+      },
+      "s-h-struct": {
+        "id": "s-h-struct",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Structure"
+          }
+        ],
+        "children": []
+      },
+      "s-st-lead": {
+        "id": "s-st-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "The scaffold creates eight Markdown files and, by default, an "
+          },
+          {
+            "insert": "examples/",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " directory."
+          }
+        ],
+        "children": []
+      },
+      "10-system-design-3": {
+        "id": "10-system-design-3",
+        "type": "file-tree",
+        "props": {
+          "entries": [
+            {
+              "path": "objectives/example/README.md",
+              "note": "entry point and context map"
+            },
+            {
+              "path": "objectives/example/goal.md",
+              "note": "outcome, context_refresh list, and stopping criteria"
+            },
+            {
+              "path": "objectives/example/current_state.md",
+              "note": "current state and handoff"
+            },
+            {
+              "path": "objectives/example/context/00_problem.md",
+              "note": "baseline, failure modes, prior evidence"
+            },
+            {
+              "path": "objectives/example/context/01_constraints.md",
+              "note": "validity rules and forbidden shortcuts"
+            },
+            {
+              "path": "objectives/example/context/02_implementation_scope.md",
+              "note": "owned files and read-only boundaries"
+            },
+            {
+              "path": "objectives/example/context/03_working_plan.md",
+              "note": "phases, outputs, gates, recovery"
+            },
+            {
+              "path": "objectives/example/context/04_validation_and_handoff.md",
+              "note": "acceptance and evidence requirements"
+            },
+            {
+              "path": "objectives/example/examples/",
+              "note": "optional concrete inputs or examples"
+            },
+            {
+              "path": "objectives/example/scripts/",
+              "note": "experiment scripts and runners, added when needed"
+            },
+            {
+              "path": "objectives/example/artifacts/",
+              "note": "reports and run outputs, added when needed"
+            }
+          ]
+        },
+        "children": []
+      },
+      "s-st1": {
+        "id": "s-st1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The objective folder is the run's workspace."
+          }
+        ],
+        "children": [
+          "s-st1a",
+          "s-st1b"
+        ]
+      },
+      "s-st1a": {
+        "id": "s-st1a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Scripts go in "
+          },
+          {
+            "insert": "scripts/",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " and reports and run outputs go in "
+          },
+          {
+            "insert": "artifacts/",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": ", both under the objective, never at the repo root."
+          }
+        ],
+        "children": []
+      },
+      "s-st1b": {
+        "id": "s-st1b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Long runs write one directory per run under "
+          },
+          {
+            "insert": "artifacts/runs/<run_id>/",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": []
+      },
+      "s-st2": {
+        "id": "s-st2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The scaffold does not create "
+          },
+          {
+            "insert": "scripts/",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " or "
+          },
+          {
+            "insert": "artifacts/",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": ". The agent adds them when the objective needs them."
+          }
+        ],
+        "children": []
+      },
+      "s-h-goal": {
+        "id": "s-h-goal",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "The Goal"
+          }
+        ],
+        "children": []
+      },
+      "s-g-lead": {
+        "id": "s-g-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "goal.md",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " uses six pseudo-XML blocks with Markdown bullets inside them."
+          }
+        ],
+        "children": []
+      },
+      "s-g1": {
+        "id": "s-g1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The blocks are goal, context_refresh, working_strategy, success_metrics, non_goals, and completion_criteria."
+          }
+        ],
+        "children": [
+          "s-g1a",
+          "s-g1b"
+        ]
+      },
+      "s-g1a": {
+        "id": "s-g1a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The format is a reading convention for agents, not a parsed schema."
+          }
+        ],
+        "children": []
+      },
+      "s-g1b": {
+        "id": "s-g1b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Add a block such as "
+          },
+          {
+            "insert": "<validation_commands>",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " only when it reduces ambiguity."
+          }
+        ],
+        "children": []
+      },
+      "s-g2": {
+        "id": "s-g2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The "
+          },
+          {
+            "insert": "<context_refresh>",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " block lists the files the agent rereads at the start and after every compaction or resume."
+          }
+        ],
+        "children": [
+          "s-g2a"
+        ]
+      },
+      "s-g2a": {
+        "id": "s-g2a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The scaffold lists goal.md, current_state.md, and all five context files."
+          }
+        ],
+        "children": []
+      },
+      "s-g3": {
+        "id": "s-g3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The completion criteria are the stopping criteria."
+          }
+        ],
+        "children": [
+          "s-g3a",
+          "s-g3b"
+        ]
+      },
+      "s-g3a": {
+        "id": "s-g3a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Name every metric on every dataset. A vague target lets the agent stop at the first easy win."
+          }
+        ],
+        "children": []
+      },
+      "s-g3b": {
+        "id": "s-g3b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Success metrics describe progress. A stage can meet its metric while the final pipeline still fails validation."
+          }
+        ],
+        "children": []
+      },
+      "s-g4": {
+        "id": "s-g4",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The goal stays under 4,000 characters so it fits Codex "
+          },
+          {
+            "insert": "/goal",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": [
+          "s-g4a"
+        ]
+      },
+      "s-g4a": {
+        "id": "s-g4a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Background, evidence, and phase plans move into "
+          },
+          {
+            "insert": "context/",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": "."
+          }
+        ],
+        "children": []
+      },
+      "s-h-phase": {
+        "id": "s-h-phase",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "The Phase Contract"
+          }
+        ],
+        "children": []
+      },
+      "s-p-lead": {
+        "id": "s-p-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "context/03_working_plan.md",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " splits substantial work into phases. Each phase answers six questions."
+          }
+        ],
+        "children": []
+      },
+      "10-system-design-9": {
+        "id": "10-system-design-9",
+        "type": "structured-table",
+        "props": {
+          "columns": [
+            "Field",
+            "Question It Answers"
+          ],
+          "rows": [
+            [
+              "Objective",
+              "What does this phase establish?"
+            ],
+            [
+              "Inputs",
+              "Which code, data, configs, and previous artifacts does it use?"
+            ],
+            [
+              "Process",
+              "Which concrete actions or commands run?"
+            ],
+            [
+              "Outputs",
+              "Which files or decisions survive the session?"
+            ],
+            [
+              "Gate",
+              "What evidence permits the next phase?"
+            ],
+            [
+              "Failure handling",
+              "What happens when evidence is missing or the gate fails?"
+            ]
+          ]
+        },
+        "children": []
+      },
+      "s-p1": {
+        "id": "s-p1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Each phase's output becomes an input to a later phase or a final decision."
+          }
+        ],
+        "children": []
+      },
+      "s-p2": {
+        "id": "s-p2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Replace a vague task such as \"validate the candidate\" with the dataset, command, artifact, and acceptance condition."
+          }
+        ],
+        "children": []
+      },
+      "s-h-exec": {
+        "id": "s-h-exec",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Execution and Handoff"
+          }
+        ],
+        "children": []
+      },
+      "s-e-lead": {
+        "id": "s-e-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "The files carry the run across compactions and restarts."
+          }
+        ],
+        "children": []
+      },
+      "s-e1": {
+        "id": "s-e1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The agent rereads goal.md, current_state.md, and the relevant context files at the start of work and after every compaction or resume."
+          }
+        ],
+        "children": []
+      },
+      "s-e2": {
+        "id": "s-e2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The agent updates current_state.md at the start of active work, after milestones, before handoff or compaction, and before its final response."
+          }
+        ],
+        "children": [
+          "s-e2a",
+          "s-e2b"
+        ]
+      },
+      "s-e2a": {
+        "id": "s-e2a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The update records completed decisions, active work, next actions, risks, and important paths."
+          }
+        ],
+        "children": []
+      },
+      "s-e2b": {
+        "id": "s-e2b",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Link logs instead of pasting them into the current state."
+          }
+        ],
+        "children": []
+      },
+      "s-e3": {
+        "id": "s-e3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If a run is still active at handoff, current_state.md gets an "
+          },
+          {
+            "insert": "<active_runs>",
+            "attributes": {
+              "code": true
+            }
+          },
+          {
+            "insert": " entry."
+          }
+        ],
+        "children": [
+          "s-e3a"
+        ]
+      },
+      "s-e3a": {
+        "id": "s-e3a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The entry names the command, PID or session, start time, status, log, checkpoint, and control paths, and the safest next action."
+          }
+        ],
+        "children": []
+      },
+      "s-h-long": {
+        "id": "s-h-long",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Long-Running Work"
+          }
+        ],
+        "children": []
+      },
+      "s-l-lead": {
+        "id": "s-l-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "A runner that may run longer than a few minutes writes these files in its run directory."
+          }
+        ],
+        "children": []
+      },
+      "10-system-design-16": {
+        "id": "10-system-design-16",
+        "type": "structured-table",
+        "props": {
+          "columns": [
+            "Artifact",
+            "Responsibility"
+          ],
+          "rows": [
+            [
+              "run_manifest.json",
+              "Identity, command, code/input/config fingerprints, output paths, and resume command."
+            ],
+            [
+              "status.json and progress.jsonl",
+              "Current phase, completed units, heartbeat, and progress history."
+            ],
+            [
+              "run.log.jsonl",
+              "Warnings, errors, checkpoint writes, and accepted or rejected control changes."
+            ],
+            [
+              "checkpoint.json",
+              "Completed units and enough identity to reject an incompatible resume."
+            ],
+            [
+              "outputs/, partial/, rejected/",
+              "Separate accepted evidence from incomplete or invalid output."
+            ]
+          ]
+        },
+        "children": []
+      },
+      "s-l1": {
+        "id": "s-l1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "These files are a runner contract. The scaffold does not generate them."
+          }
+        ],
+        "children": []
+      },
+      "s-l2": {
+        "id": "s-l2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The runner checkpoints after bounded units of work and writes accepted state atomically."
+          }
+        ],
+        "children": []
+      },
+      "s-l3": {
+        "id": "s-l3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "The runner validates code, config, and input compatibility before it resumes."
+          }
+        ],
+        "children": [
+          "s-l3a"
+        ]
+      },
+      "s-l3a": {
+        "id": "s-l3a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "If a runner cannot provide a property, the working plan says why and names the nearest fallback."
+          }
+        ],
+        "children": []
+      },
+      "s-l4": {
+        "id": "s-l4",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Live controls such as concurrency or stop-after-current-unit can change mid-run if the runner validates them."
+          }
+        ],
+        "children": [
+          "s-l4a"
+        ]
+      },
+      "s-l4a": {
+        "id": "s-l4a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Changes to inputs, algorithm, or validation gates start a new run segment with explicit lineage."
+          }
+        ],
+        "children": []
+      },
+      "s-h-done": {
+        "id": "s-h-done",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Completion"
+          }
+        ],
+        "children": []
+      },
+      "s-d-lead": {
+        "id": "s-d-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "Map every completion criterion to evidence before you declare the objective done."
+          }
+        ],
+        "children": []
+      },
+      "s-d1": {
+        "id": "s-d1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "A failed search can end with a rejection report without meeting an improvement goal."
+          }
+        ],
+        "children": [
+          "s-d1a"
+        ]
+      },
+      "s-d1a": {
+        "id": "s-d1a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Record that outcome and the next hypothesis or blocker."
+          }
+        ],
+        "children": []
+      },
+      "s-d2": {
+        "id": "s-d2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "A successful stage does not redefine the overall goal."
+          }
+        ],
+        "children": [
+          "s-d2a"
+        ]
+      },
+      "s-d2a": {
+        "id": "s-d2a",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Record any approved scope change explicitly."
+          }
+        ],
+        "children": []
+      },
+      "s-d3": {
+        "id": "s-d3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Host goal status and the Markdown state are separate. Keep both describing the same outcome."
+          }
+        ],
+        "children": []
+      },
+      "s-h-why": {
+        "id": "s-h-why",
+        "type": "heading",
+        "props": {
+          "level": 2
+        },
+        "text": [
+          {
+            "insert": "Why"
+          }
+        ],
+        "children": []
+      },
+      "s-w-lead": {
+        "id": "s-w-lead",
+        "type": "paragraph",
+        "props": {},
+        "text": [
+          {
+            "insert": "Each part of the bundle prevents one failure of long runs."
+          }
+        ],
+        "children": []
+      },
+      "s-w1": {
+        "id": "s-w1",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Stable intent stops each session from inventing a new definition of success."
+          }
+        ],
+        "children": []
+      },
+      "s-w2": {
+        "id": "s-w2",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "A compact current state makes continuation cheap."
+          }
+        ],
+        "children": []
+      },
+      "s-w3": {
+        "id": "s-w3",
+        "type": "list-item",
+        "props": {
+          "ordered": false
+        },
+        "text": [
+          {
+            "insert": "Durable artifacts let a reviewer check a decision after the conversation that produced it is gone."
+          }
+        ],
+        "children": []
+      }
+    }
+  },
+  "doc_hash": "0d53bbb6ae313402544fa265cd7655c91d268b73acdd22e73b17d53ad75661f5",
+  "annotations": null,
+  "annotations_hash": null
+}

@@ -1,0 +1,156 @@
+{
+  "theme": {
+    "id": "global",
+    "manifest": {
+      "name": "Global",
+      "dark": false,
+      "railDefaults": {
+        "accent": "blue",
+        "colors": {
+          "background": "#fdfdfd",
+          "sidebar": "#f9f9f9",
+          "text": "#2a2a2a"
+        },
+        "typography": {
+          "bodyFont": "sans",
+          "headingFont": "sans",
+          "codeFont": "fira-code",
+          "codePanels": "dark",
+          "numberFont": "body",
+          "fontSize": 16,
+          "lineHeight": 1.6,
+          "letterSpacing": 0
+        },
+        "layout": {
+          "contentWidth": 60,
+          "wideWidth": 1040,
+          "contentMargin": 88,
+          "topPadding": 24,
+          "titlePadding": 20,
+          "bottomPadding": 24,
+          "radius": 2,
+          "borderStrength": 1,
+          "backgroundTint": 0,
+          "sidebarTint": 0
+        },
+        "sidebar": {
+          "textColor": null,
+          "font": "sans",
+          "fontSize": 14,
+          "padding": 4,
+          "guides": true,
+          "guideColor": null,
+          "guideWidth": 1,
+          "guideOpacity": 0.6
+        },
+        "highlight": {
+          "color": null,
+          "radius": 2,
+          "padding": 4,
+          "dragOpacity": 0.3,
+          "dropColor": null,
+          "dropWidth": 3,
+          "dropOpacity": 0.9,
+          "dropRadius": 2
+        },
+        "dragSelect": {
+          "color": null,
+          "opacity": 0.12
+        },
+        "list": {
+          "discSize": 6,
+          "circleSize": 6,
+          "circleThickness": 1.5,
+          "squareSize": 5,
+          "indent": 24
+        },
+        "grip": {
+          "gap": 12,
+          "offsetY": 6,
+          "size": 18,
+          "color": null,
+          "fadeMs": 100
+        },
+        "scrollbar": {
+          "width": 10,
+          "color": null,
+          "opacity": 1,
+          "padding": 0
+        },
+        "transition": {
+          "type": "fade",
+          "fadeOutMs": 80,
+          "fadeInMs": 120
+        },
+        "peek": {
+          "width": 48,
+          "durationMs": 300,
+          "padding": 1.5,
+          "dividerColor": null,
+          "dividerWidth": 1,
+          "dividerStyle": "solid"
+        },
+        "reference": {
+          "color": null,
+          "underlineColor": null,
+          "iconSize": 12,
+          "iconColor": null,
+          "iconGap": 2,
+          "iconPosition": "before"
+        },
+        "annotate": {
+          "accent": null,
+          "add": null,
+          "del": null,
+          "washOpacity": 0.08,
+          "actionPaneWidth": 520
+        },
+        "blockLayout": {
+          "state-shape": {
+            "width": "780px",
+            "columnSplit": 48
+          },
+          "file-tree": {
+            "width": "1300px"
+          },
+          "structured-table": {
+            "width": "860px"
+          },
+          "code": {
+            "width": "920px"
+          }
+        },
+        "grain": {
+          "enabled": true,
+          "opacity": 0.15,
+          "frequency": 0.8,
+          "contrast": 1.3,
+          "blendMode": "auto",
+          "softening": {
+            "background": 1,
+            "font": 0.8,
+            "icons": 0.8
+          }
+        },
+        "components": {}
+      }
+    },
+    "components": {
+      "state-shape": {
+        "rowPad": "1px",
+        "rowMinHeight": "0px",
+        "nameWeight": "300"
+      },
+      "structured-table": {
+        "rowRuleWidth": "1px",
+        "fontSize": "13px",
+        "headerWeight": "500",
+        "headerRuleOpacity": "0.6",
+        "headerRuleWidth": "2.5px"
+      },
+      "surfaces": {
+        "radius": "2px"
+      }
+    }
+  }
+}
