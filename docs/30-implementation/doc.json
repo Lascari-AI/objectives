@@ -9,43 +9,53 @@
       "type": "paragraph",
       "props": {},
       "children": [
-        "30-implementation-1",
-        "30-implementation-2",
-        "30-implementation-3",
-        "30-implementation-4",
+        "i-open",
+        "i-ctx",
+        "i-h-scaf",
+        "i-sc-lead",
+        "i-sc1",
+        "i-sc2",
         "30-implementation-5",
-        "30-implementation-6",
-        "30-implementation-7",
-        "30-implementation-8",
-        "30-implementation-9",
+        "i-sc3",
+        "i-sc4",
+        "i-h-val",
+        "i-v-lead",
+        "i-v1",
+        "i-v2",
         "30-implementation-10",
-        "30-implementation-11",
-        "30-implementation-12",
-        "30-implementation-13",
-        "30-implementation-14",
-        "30-implementation-15",
-        "30-implementation-16",
-        "30-implementation-17"
+        "i-v3",
+        "i-v4",
+        "i-v5",
+        "i-v6",
+        "i-h-ch",
+        "i-ch-lead",
+        "i-ch1",
+        "i-ch2",
+        "i-ch3",
+        "i-h-meta",
+        "i-m-lead",
+        "i-m1",
+        "i-m2"
       ]
     },
-    "30-implementation-1": {
-      "id": "30-implementation-1",
+    "i-open": {
+      "id": "i-open",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "The skill's Python helpers create a Markdown bundle and check goal length. They use the Python standard library and do not execute the objective, schedule work, or manage checkpoints."
+          "insert": "The skill's two Python helpers create an objective bundle and check goal length. They use only the Python standard library. They do not run the objective, schedule work, or manage checkpoints."
         }
       ],
       "children": []
     },
-    "30-implementation-2": {
-      "id": "30-implementation-2",
+    "i-ctx": {
+      "id": "i-ctx",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "Their behavior supports the "
+          "insert": "Both helpers support the "
         },
         {
           "insert": "Objective Bundle and Lifecycle",
@@ -57,13 +67,22 @@
           }
         },
         {
-          "insert": " contract. The source is under .codex/skills/setup-objective/scripts/."
+          "insert": " contract, and their source is under "
+        },
+        {
+          "insert": ".codex/skills/setup-objective/scripts/",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": "."
         }
       ],
       "children": []
     },
-    "30-implementation-3": {
-      "id": "30-implementation-3",
+    "i-h-scaf": {
+      "id": "i-h-scaf",
       "type": "heading",
       "props": {
         "level": 2
@@ -75,18 +94,14 @@
       ],
       "children": []
     },
-    "30-implementation-4": {
-      "id": "30-implementation-4",
+    "i-sc-lead": {
+      "id": "i-sc-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "The implementation is "
-        },
-        {
           "insert": ".codex/skills/setup-objective/scripts/create_objective.py",
           "attributes": {
-            "code": true,
             "reference": {
               "kind": "source",
               "path": ".codex/skills/setup-objective/scripts/create_objective.py"
@@ -94,7 +109,51 @@
           }
         },
         {
-          "insert": ". It normalizes the name to a lowercase hyphenated slug and writes the goal, state, README, and five context templates."
+          "insert": " writes the README, goal, current state, and five context templates."
+        }
+      ],
+      "children": []
+    },
+    "i-sc1": {
+      "id": "i-sc1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It normalizes the name to a lowercase hyphenated slug."
+        }
+      ],
+      "children": []
+    },
+    "i-sc2": {
+      "id": "i-sc2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It creates "
+        },
+        {
+          "insert": "examples/.gitkeep",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": " unless you pass "
+        },
+        {
+          "insert": "--no-examples",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": "."
         }
       ],
       "children": []
@@ -136,30 +195,87 @@
       },
       "children": []
     },
-    "30-implementation-6": {
-      "id": "30-implementation-6",
-      "type": "paragraph",
-      "props": {},
+    "i-sc3": {
+      "id": "i-sc3",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
       "text": [
         {
-          "insert": "Overwrite refusal is per file, not a transaction across the entire bundle. A partially populated destination can receive earlier files before a later existing file causes failure. Inspect the directory after a failure instead of rerunning with --force."
+          "insert": "The overwrite check runs per file, not across the whole bundle."
+        }
+      ],
+      "children": [
+        "i-sc3a",
+        "i-sc3b"
+      ]
+    },
+    "i-sc3a": {
+      "id": "i-sc3a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The script can write earlier files before a later existing file stops it."
         }
       ],
       "children": []
     },
-    "30-implementation-7": {
-      "id": "30-implementation-7",
-      "type": "paragraph",
-      "props": {},
+    "i-sc3b": {
+      "id": "i-sc3b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
       "text": [
         {
-          "insert": "The templates are intentionally incomplete. A successful scaffold command means the files exist, not that the objective is ready to execute."
+          "insert": "After a failure, inspect the directory instead of rerunning with "
+        },
+        {
+          "insert": "--force",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": "."
         }
       ],
       "children": []
     },
-    "30-implementation-8": {
-      "id": "30-implementation-8",
+    "i-sc4": {
+      "id": "i-sc4",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The templates are deliberately incomplete."
+        }
+      ],
+      "children": [
+        "i-sc4a"
+      ]
+    },
+    "i-sc4a": {
+      "id": "i-sc4a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "A successful run means the files exist, not that the objective is ready to execute."
+        }
+      ],
+      "children": []
+    },
+    "i-h-val": {
+      "id": "i-h-val",
       "type": "heading",
       "props": {
         "level": 2
@@ -171,18 +287,14 @@
       ],
       "children": []
     },
-    "30-implementation-9": {
-      "id": "30-implementation-9",
+    "i-v-lead": {
+      "id": "i-v-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "The implementation is "
-        },
-        {
           "insert": ".codex/skills/setup-objective/scripts/validate_goal_length.py",
           "attributes": {
-            "code": true,
             "reference": {
               "kind": "source",
               "path": ".codex/skills/setup-objective/scripts/validate_goal_length.py"
@@ -190,7 +302,51 @@
           }
         },
         {
-          "insert": ". It reads a file or stdin, strips surrounding whitespace and an outer fenced block, removes a leading /goal command when followed by whitespace, and counts Python string characters."
+          "insert": " checks that a goal fits under the 4,000-character Codex "
+        },
+        {
+          "insert": "/goal",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": " limit."
+        }
+      ],
+      "children": []
+    },
+    "i-v1": {
+      "id": "i-v1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It reads a file, or stdin when no path is given."
+        }
+      ],
+      "children": []
+    },
+    "i-v2": {
+      "id": "i-v2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Before counting, it strips surrounding whitespace, an outer fenced block, and a leading "
+        },
+        {
+          "insert": "/goal",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": " command followed by whitespace."
         }
       ],
       "children": []
@@ -228,30 +384,111 @@
       },
       "children": []
     },
-    "30-implementation-11": {
-      "id": "30-implementation-11",
-      "type": "paragraph",
-      "props": {},
+    "i-v3": {
+      "id": "i-v3",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
       "text": [
         {
-          "insert": "The helper prints objective_chars, target_chars, and max_chars. It returns exit code 1 above the hard maximum, or above a strict target. An advisory target warning alone returns success. An empty goal can pass this length check, so semantic review remains necessary."
+          "insert": "It prints "
+        },
+        {
+          "insert": "objective_chars",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": ", "
+        },
+        {
+          "insert": "target_chars",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": ", and "
+        },
+        {
+          "insert": "max_chars",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": "."
         }
       ],
       "children": []
     },
-    "30-implementation-12": {
-      "id": "30-implementation-12",
-      "type": "paragraph",
-      "props": {},
+    "i-v4": {
+      "id": "i-v4",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
       "text": [
         {
-          "insert": "The default maximum reflects the Codex TUI constraint recorded by this skill. This guide documents the local helper's behavior; it does not establish a current limit for every Codex client or other agent host."
+          "insert": "It exits with code 1 above the hard maximum of 3,999 characters, or above a target enforced with "
+        },
+        {
+          "insert": "--strict-target",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": "."
+        }
+      ],
+      "children": [
+        "i-v4a"
+      ]
+    },
+    "i-v4a": {
+      "id": "i-v4a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "An advisory target warning alone still exits with code 0."
         }
       ],
       "children": []
     },
-    "30-implementation-13": {
-      "id": "30-implementation-13",
+    "i-v5": {
+      "id": "i-v5",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "An empty goal passes the length check, so review the goal's meaning as well."
+        }
+      ],
+      "children": []
+    },
+    "i-v6": {
+      "id": "i-v6",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The default maximum is the Codex TUI limit recorded by the skill. Other clients and hosts may set different limits."
+        }
+      ],
+      "children": []
+    },
+    "i-h-ch": {
+      "id": "i-h-ch",
       "type": "heading",
       "props": {
         "level": 2
@@ -263,30 +500,82 @@
       ],
       "children": []
     },
-    "30-implementation-14": {
-      "id": "30-implementation-14",
+    "i-ch-lead": {
+      "id": "i-ch-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "Markdown keeps objective state inspectable with ordinary repository tools. Pseudo-XML marks sections without introducing a runtime parser. The helper scripts remain small because execution belongs to the project's agent and runners."
+          "insert": "The helpers stay small because the agent and its runners do the work."
         }
       ],
       "children": []
     },
-    "30-implementation-15": {
-      "id": "30-implementation-15",
-      "type": "paragraph",
-      "props": {},
+    "i-ch1": {
+      "id": "i-ch1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
       "text": [
         {
-          "insert": "A project-specific runner must implement compatibility checks, atomic checkpoints, and controls itself. Documentation of a flag such as --resume does not prove that every historical AutoHDR runner meets the later guidance."
+          "insert": "Markdown keeps the objective readable with ordinary repository tools."
         }
       ],
       "children": []
     },
-    "30-implementation-16": {
-      "id": "30-implementation-16",
+    "i-ch2": {
+      "id": "i-ch2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Pseudo-XML marks sections without a runtime parser."
+        }
+      ],
+      "children": []
+    },
+    "i-ch3": {
+      "id": "i-ch3",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Each project runner implements its own compatibility checks, atomic checkpoints, and controls."
+        }
+      ],
+      "children": [
+        "i-ch3a"
+      ]
+    },
+    "i-ch3a": {
+      "id": "i-ch3a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "A documented flag such as "
+        },
+        {
+          "insert": "--resume",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": " does not prove that an older runner meets the current guidance."
+        }
+      ],
+      "children": []
+    },
+    "i-h-meta": {
+      "id": "i-h-meta",
       "type": "heading",
       "props": {
         "level": 2
@@ -298,18 +587,14 @@
       ],
       "children": []
     },
-    "30-implementation-17": {
-      "id": "30-implementation-17",
+    "i-m-lead": {
+      "id": "i-m-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "The Codex display name and default skill prompt are in "
-        },
-        {
           "insert": ".codex/skills/setup-objective/agents/openai.yaml",
           "attributes": {
-            "code": true,
             "reference": {
               "kind": "source",
               "path": ".codex/skills/setup-objective/agents/openai.yaml"
@@ -317,7 +602,42 @@
           }
         },
         {
-          "insert": ". The repository's .codex/config.toml is workspace configuration, not a portable installation requirement. Copying the skill does not require copying that configuration."
+          "insert": " holds the Codex display name and default skill prompt."
+        }
+      ],
+      "children": []
+    },
+    "i-m1": {
+      "id": "i-m1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The repository's "
+        },
+        {
+          "insert": ".codex/config.toml",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": " is local Codex configuration, not an install requirement."
+        }
+      ],
+      "children": []
+    },
+    "i-m2": {
+      "id": "i-m2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Copying the skill does not require copying that file."
         }
       ],
       "children": []

@@ -85,6 +85,22 @@ Default to an experiment loop that:
   production rules;
 - writes enough artifacts for a future agent to reproduce every decision.
 
+## Objective Workspace
+
+Keep every file an objective produces inside `objectives/<slug>/` by default.
+This keeps the repository clean and lets every script, report, and run output
+be traced back to the objective that made it.
+
+- Put scripts, runners, sweeps, and one-off analysis code in
+  `objectives/<slug>/scripts/`.
+- Put reports and run outputs in `objectives/<slug>/artifacts/`, with long runs
+  under `objectives/<slug>/artifacts/runs/<run_id>/`.
+- Do not create experiment scripts at the repository root or in shared script
+  folders. Move code out of the objective only when it becomes part of the
+  product, and record the move in `current_state.md`.
+- List the workspace paths in the `current_state.md` `<important_paths>` block
+  so a resumed agent can find them.
+
 ## Objective Performance Defaults
 
 For objective-local analysis, sweeps, audits, and research runners, treat

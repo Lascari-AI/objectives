@@ -9,40 +9,52 @@
       "type": "paragraph",
       "props": {},
       "children": [
-        "20-agents-1",
-        "20-agents-2",
-        "20-agents-3",
-        "20-agents-4",
-        "20-agents-5",
-        "20-agents-6",
-        "20-agents-7",
-        "20-agents-8",
-        "20-agents-9",
-        "20-agents-10",
-        "20-agents-11",
-        "20-agents-12",
-        "20-agents-13",
-        "20-agents-14",
-        "20-agents-15",
-        "20-agents-16",
-        "20-agents-17",
-        "20-agents-18",
-        "20-agents-19"
+        "a-open",
+        "a-h-in",
+        "a-in-lead",
+        "a-in1",
+        "a-in2",
+        "a-in3",
+        "a-in4",
+        "a-h-wf",
+        "a-wf-lead",
+        "a-wf1",
+        "a-wf2",
+        "a-wf3",
+        "a-wf4",
+        "a-wf5",
+        "a-h-opt",
+        "a-opt-lead",
+        "a-opt1",
+        "a-opt2",
+        "a-opt3",
+        "a-opt4",
+        "a-opt5",
+        "a-h-out",
+        "a-out-lead",
+        "a-out1",
+        "a-out2",
+        "a-h-host",
+        "a-host-lead",
+        "a-host1",
+        "a-host2",
+        "a-host3",
+        "a-host4"
       ]
     },
-    "20-agents-1": {
-      "id": "20-agents-1",
+    "a-open": {
+      "id": "a-open",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "setup-objective is an authoring and maintenance skill for the agent already working in the repository. It gives that agent a file convention, writing guidance, and helpers rather than launching an independent worker."
+          "insert": "setup-objective is an authoring and maintenance skill for the agent already working in the repository. It gives that agent a file convention, writing guidance, and two helper scripts. It does not launch a separate worker."
         }
       ],
       "children": []
     },
-    "20-agents-2": {
-      "id": "20-agents-2",
+    "a-h-in": {
+      "id": "a-h-in",
       "type": "heading",
       "props": {
         "level": 2
@@ -54,29 +66,98 @@
       ],
       "children": []
     },
-    "20-agents-3": {
-      "id": "20-agents-3",
+    "a-in-lead": {
+      "id": "a-in-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "The agent reads the user's outcome, existing objectives, repository instructions, active state, and relevant source evidence. It preserves established objective names and unrelated work. A legacy top-level CURRENT_STATE.md is context to sort, not permission to rewrite the whole project history."
+          "insert": "The agent starts from what already exists in the repository."
         }
       ],
       "children": []
     },
-    "20-agents-4": {
-      "id": "20-agents-4",
-      "type": "paragraph",
-      "props": {},
+    "a-in1": {
+      "id": "a-in1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
       "text": [
         {
-          "insert": "The owning skill is "
+          "insert": "It reads the user's outcome, existing objectives, repository instructions, and any active state file."
+        }
+      ],
+      "children": []
+    },
+    "a-in2": {
+      "id": "a-in2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It preserves established objective names and unrelated work."
+        }
+      ],
+      "children": []
+    },
+    "a-in3": {
+      "id": "a-in3",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It treats a top-level CURRENT_STATE.md as legacy index material."
+        }
+      ],
+      "children": [
+        "a-in3a",
+        "a-in3b"
+      ]
+    },
+    "a-in3a": {
+      "id": "a-in3a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The agent moves only the relevant state into the objective's own current_state.md."
+        }
+      ],
+      "children": []
+    },
+    "a-in3b": {
+      "id": "a-in3b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It leaves unrelated content alone unless the user asks for a rewrite."
+        }
+      ],
+      "children": []
+    },
+    "a-in4": {
+      "id": "a-in4",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The skill is defined in "
         },
         {
           "insert": ".codex/skills/setup-objective/SKILL.md",
           "attributes": {
-            "code": true,
             "reference": {
               "kind": "source",
               "path": ".codex/skills/setup-objective/SKILL.md"
@@ -84,12 +165,26 @@
           }
         },
         {
-          "insert": ". Its detailed authoring rules live in "
+          "insert": "."
+        }
+      ],
+      "children": [
+        "a-in4a"
+      ]
+    },
+    "a-in4a": {
+      "id": "a-in4a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Detailed authoring rules live in "
         },
         {
           "insert": ".codex/skills/setup-objective/references/objective_authoring.md",
           "attributes": {
-            "code": true,
             "reference": {
               "kind": "source",
               "path": ".codex/skills/setup-objective/references/objective_authoring.md"
@@ -102,8 +197,8 @@
       ],
       "children": []
     },
-    "20-agents-5": {
-      "id": "20-agents-5",
+    "a-h-wf": {
+      "id": "a-h-wf",
       "type": "heading",
       "props": {
         "level": 2
@@ -115,73 +210,84 @@
       ],
       "children": []
     },
-    "20-agents-6": {
-      "id": "20-agents-6",
-      "type": "list-item",
-      "props": {
-        "ordered": false
-      },
+    "a-wf-lead": {
+      "id": "a-wf-lead",
+      "type": "paragraph",
+      "props": {},
       "text": [
         {
-          "insert": "Inspect existing objectives and identify whether this request creates a new outcome or continues an existing one."
+          "insert": "The agent follows the same steps for every objective."
         }
       ],
       "children": []
     },
-    "20-agents-7": {
-      "id": "20-agents-7",
+    "a-wf1": {
+      "id": "a-wf1",
       "type": "list-item",
       "props": {
-        "ordered": false
+        "ordered": true
       },
       "text": [
         {
-          "insert": "Scaffold a new bundle with a stable lowercase hyphenated slug, then replace generic instructions with project-specific inputs, commands, artifacts, and gates."
+          "insert": "Inspect existing objectives and decide whether the request is new work or a continuation."
         }
       ],
       "children": []
     },
-    "20-agents-8": {
-      "id": "20-agents-8",
+    "a-wf2": {
+      "id": "a-wf2",
       "type": "list-item",
       "props": {
-        "ordered": false
+        "ordered": true
       },
       "text": [
         {
-          "insert": "Keep the goal concise and move detailed background and phase contracts into context. Preserve enough specificity for a fresh session to act."
+          "insert": "Scaffold a new bundle with a stable lowercase hyphenated slug. Then replace every template bullet with project-specific inputs, commands, artifacts, and gates."
         }
       ],
       "children": []
     },
-    "20-agents-9": {
-      "id": "20-agents-9",
+    "a-wf3": {
+      "id": "a-wf3",
       "type": "list-item",
       "props": {
-        "ordered": false
+        "ordered": true
       },
       "text": [
         {
-          "insert": "For expensive work, define observability, interruption, resume, and active-run handoff before the run begins."
+          "insert": "Keep goal.md under 4,000 characters and move background, research notes, and phase plans into context/."
         }
       ],
       "children": []
     },
-    "20-agents-10": {
-      "id": "20-agents-10",
+    "a-wf4": {
+      "id": "a-wf4",
       "type": "list-item",
       "props": {
-        "ordered": false
+        "ordered": true
       },
       "text": [
         {
-          "insert": "Refresh objective-local current state at the start, after milestones, and before handoff or completion."
+          "insert": "For runs longer than a few minutes, define logs, status, checkpoints, resume, and active-run handoff before the run starts."
         }
       ],
       "children": []
     },
-    "20-agents-11": {
-      "id": "20-agents-11",
+    "a-wf5": {
+      "id": "a-wf5",
+      "type": "list-item",
+      "props": {
+        "ordered": true
+      },
+      "text": [
+        {
+          "insert": "Update current_state.md at the start, after milestones, before handoff or compaction, and before the final response."
+        }
+      ],
+      "children": []
+    },
+    "a-h-opt": {
+      "id": "a-h-opt",
       "type": "heading",
       "props": {
         "level": 2
@@ -193,40 +299,121 @@
       ],
       "children": []
     },
-    "20-agents-12": {
-      "id": "20-agents-12",
+    "a-opt-lead": {
+      "id": "a-opt-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "The working plan should reproduce the baseline, record candidate variables, use cheap proxies for screening, and validate selected candidates against the real outcome. Include anchors and near misses so the search does not select only the highest proxy score."
+          "insert": "For optimization work, the skill treats experiment layout as part of the objective design."
         }
       ],
       "children": []
     },
-    "20-agents-13": {
-      "id": "20-agents-13",
-      "type": "paragraph",
-      "props": {},
+    "a-opt1": {
+      "id": "a-opt1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
       "text": [
         {
-          "insert": "When visual errors matter, observations should become testable feature hypotheses. Truth labels, filenames, shard identities, and hand-reviewed labels may support measurement, but must not become production predicates."
+          "insert": "The working plan reproduces the baseline before it changes behavior."
         }
       ],
       "children": []
     },
-    "20-agents-14": {
-      "id": "20-agents-14",
-      "type": "paragraph",
-      "props": {},
+    "a-opt2": {
+      "id": "a-opt2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
       "text": [
         {
-          "insert": "The reusable strategy guidance is "
+          "insert": "Candidate variables go in a "
+        },
+        {
+          "insert": "config_matrix.csv",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": " or an equivalent manifest."
+        }
+      ],
+      "children": []
+    },
+    "a-opt3": {
+      "id": "a-opt3",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Cheap proxy sweeps only screen candidates. Selected anchors, Pareto candidates, and near-misses get full validation."
+        }
+      ],
+      "children": [
+        "a-opt3a"
+      ]
+    },
+    "a-opt3a": {
+      "id": "a-opt3a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Anchors and near-misses keep the search from picking only the top proxy score."
+        }
+      ],
+      "children": []
+    },
+    "a-opt4": {
+      "id": "a-opt4",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Visual findings become deployable feature hypotheses."
+        }
+      ],
+      "children": [
+        "a-opt4a"
+      ]
+    },
+    "a-opt4a": {
+      "id": "a-opt4a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Truth labels, filenames, shard identity, and hand-reviewed labels support measurement only. They never become production rules."
+        }
+      ],
+      "children": []
+    },
+    "a-opt5": {
+      "id": "a-opt5",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Strategy guidance lives in "
         },
         {
           "insert": ".codex/skills/setup-objective/references/known_optimization_strategies/README.md",
           "attributes": {
-            "code": true,
             "reference": {
               "kind": "source",
               "path": ".codex/skills/setup-objective/references/known_optimization_strategies/README.md"
@@ -234,12 +421,26 @@
           }
         },
         {
-          "insert": ". Long-run requirements are in "
+          "insert": "."
+        }
+      ],
+      "children": [
+        "a-opt5a"
+      ]
+    },
+    "a-opt5a": {
+      "id": "a-opt5a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Long-run requirements live in "
         },
         {
           "insert": ".codex/skills/setup-objective/references/long_running_handoff_and_scripts.md",
           "attributes": {
-            "code": true,
             "reference": {
               "kind": "source",
               "path": ".codex/skills/setup-objective/references/long_running_handoff_and_scripts.md"
@@ -252,8 +453,8 @@
       ],
       "children": []
     },
-    "20-agents-15": {
-      "id": "20-agents-15",
+    "a-h-out": {
+      "id": "a-h-out",
       "type": "heading",
       "props": {
         "level": 2
@@ -265,19 +466,45 @@
       ],
       "children": []
     },
-    "20-agents-16": {
-      "id": "20-agents-16",
+    "a-out-lead": {
+      "id": "a-out-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "The result is a concrete objective bundle with a bounded outcome, executable phases, evidence requirements, and an honest current-state record. If setup leaves open questions that affect validity, identify them before execution rather than filling them with assumptions."
+          "insert": "The result is an objective bundle that a fresh agent can execute."
         }
       ],
       "children": []
     },
-    "20-agents-17": {
-      "id": "20-agents-17",
+    "a-out1": {
+      "id": "a-out1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The bundle has a bounded outcome, explicit stopping criteria, executable phases, and an honest current state."
+        }
+      ],
+      "children": []
+    },
+    "a-out2": {
+      "id": "a-out2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "If setup leaves open questions that affect validity, the agent raises them before execution instead of filling them with assumptions."
+        }
+      ],
+      "children": []
+    },
+    "a-h-host": {
+      "id": "a-h-host",
       "type": "heading",
       "props": {
         "level": 2
@@ -289,24 +516,103 @@
       ],
       "children": []
     },
-    "20-agents-18": {
-      "id": "20-agents-18",
+    "a-host-lead": {
+      "id": "a-host-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "A host that discovers SKILL.md packages can expose setup-objective through its normal skill mechanism. The files can also be supplied explicitly by path to an agent that reads repository files. Client discovery, permissions, continuation, and budgets belong to that host."
+          "insert": "The skill is plain files, so any agent that reads the repository can use it."
         }
       ],
       "children": []
     },
-    "20-agents-19": {
-      "id": "20-agents-19",
-      "type": "paragraph",
-      "props": {},
+    "a-host1": {
+      "id": "a-host1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
       "text": [
         {
-          "insert": "Codex /goal text is one possible consumer of goal.md. The local validator enforces the limit encoded by this repository. Neither Python helper creates a host goal or changes its runtime status."
+          "insert": "A host that discovers SKILL.md packages exposes setup-objective through its normal skill mechanism."
+        }
+      ],
+      "children": []
+    },
+    "a-host2": {
+      "id": "a-host2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "You can also give the agent the path to SKILL.md directly."
+        }
+      ],
+      "children": []
+    },
+    "a-host3": {
+      "id": "a-host3",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The host owns discovery, permissions, continuation, and budgets."
+        }
+      ],
+      "children": []
+    },
+    "a-host4": {
+      "id": "a-host4",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Codex "
+        },
+        {
+          "insert": "/goal",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": " is one consumer of goal.md."
+        }
+      ],
+      "children": [
+        "a-host4a",
+        "a-host4b"
+      ]
+    },
+    "a-host4a": {
+      "id": "a-host4a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The validator enforces the 4,000-character limit."
+        }
+      ],
+      "children": []
+    },
+    "a-host4b": {
+      "id": "a-host4b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Neither helper creates a host goal or changes its status."
         }
       ],
       "children": []

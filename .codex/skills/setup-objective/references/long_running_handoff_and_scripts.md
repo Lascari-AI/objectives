@@ -75,20 +75,20 @@ Long-running scripts should expose explicit commands or flags for the common
 operational tasks:
 
 ```bash
-python scripts/run_long_job.py \
+python objectives/<slug>/scripts/run_long_job.py \
   --run-dir objectives/<slug>/artifacts/runs/<run_id> \
   --config objectives/<slug>/context/job_config.json
 
-python scripts/run_long_job.py --status \
+python objectives/<slug>/scripts/run_long_job.py --status \
   --run-dir objectives/<slug>/artifacts/runs/<run_id>
 
-python scripts/run_long_job.py --resume \
+python objectives/<slug>/scripts/run_long_job.py --resume \
   --run-dir objectives/<slug>/artifacts/runs/<run_id>
 
-python scripts/run_long_job.py --dry-run-resume-plan \
+python objectives/<slug>/scripts/run_long_job.py --dry-run-resume-plan \
   --run-dir objectives/<slug>/artifacts/runs/<run_id>
 
-python scripts/run_long_job.py --force-rebuild \
+python objectives/<slug>/scripts/run_long_job.py --force-rebuild \
   --run-dir objectives/<slug>/artifacts/runs/<run_id>
 ```
 
@@ -129,7 +129,7 @@ Recommended flags:
   "checkpoint": "objectives/<slug>/artifacts/runs/<run_id>/checkpoint.json",
   "log": "objectives/<slug>/artifacts/runs/<run_id>/run.log.jsonl",
   "outputs": ["objectives/<slug>/artifacts/runs/<run_id>/outputs/results.csv"],
-  "resume_command": "python scripts/run_long_job.py --resume --run-dir ...",
+  "resume_command": "python objectives/<slug>/scripts/run_long_job.py --resume --run-dir ...",
   "last_error": null
 }
 ```
@@ -256,7 +256,7 @@ When a run is active during handoff, add or update an `active_runs` block:
 <active_runs>
     <run id="20260523-153000-main-sweep">
         <command>
-            - `python scripts/run_long_job.py --run-dir objectives/<slug>/artifacts/runs/20260523-153000-main-sweep`
+            - `python objectives/<slug>/scripts/run_long_job.py --run-dir objectives/<slug>/artifacts/runs/20260523-153000-main-sweep`
         </command>
         <pid_or_session>
             - `PID 12345` or `exec session 17` if available.

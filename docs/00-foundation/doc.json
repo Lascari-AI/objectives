@@ -9,174 +9,727 @@
       "type": "paragraph",
       "props": {},
       "children": [
-        "00-foundation-1",
-        "00-foundation-2",
-        "00-foundation-3",
-        "00-foundation-4",
-        "00-foundation-5",
-        "00-foundation-6",
-        "00-foundation-7",
-        "00-foundation-8",
-        "00-foundation-9",
-        "00-foundation-10",
-        "00-foundation-11",
-        "00-foundation-12",
-        "00-foundation-13",
-        "00-foundation-14",
-        "00-foundation-15",
-        "00-foundation-16",
-        "00-foundation-17",
-        "00-foundation-18"
+        "f-open",
+        "f-origin",
+        "f-h-constraint",
+        "f-c-lead",
+        "f-c1",
+        "f-c2",
+        "f-c3",
+        "f-h-goal",
+        "f-g-lead",
+        "f-g-code",
+        "f-g1",
+        "f-g2",
+        "f-h-homes",
+        "f-hm-lead",
+        "f-hm1",
+        "f-hm2",
+        "f-hm3",
+        "f-hm4",
+        "f-tree",
+        "f-h-pc",
+        "f-pc-lead",
+        "f-pro",
+        "f-con",
+        "f-pc-close",
+        "f-h-next",
+        "f-n-lead",
+        "f-n1",
+        "f-n2",
+        "f-n3",
+        "f-n4",
+        "f-n5"
       ]
     },
-    "00-foundation-1": {
-      "id": "00-foundation-1",
+    "f-open": {
+      "id": "f-open",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "Objectives give long-running agent work a durable goal, a bounded plan, and an evidence-backed handoff. The setup-objective skill prepares and maintains these files so a fresh session can reconstruct what to do next."
+          "insert": "Objectives are a lightweight framework that keeps a coding agent on track during long-running tasks. All you need is a prompt and a file structure, with no service, no scheduler, and nothing to deploy. The setup-objective skill writes the files, and the agent rereads them after every compaction."
         }
       ],
       "children": []
     },
-    "00-foundation-2": {
-      "id": "00-foundation-2",
+    "f-origin": {
+      "id": "f-origin",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The pattern came out of an image-grouping coding challenge, where a plain goal-mode run beat a custom multi-agent research harness with far less setup."
+        }
+      ],
+      "children": []
+    },
+    "f-h-constraint": {
+      "id": "f-h-constraint",
       "type": "heading",
       "props": {
         "level": 2
       },
       "text": [
         {
-          "insert": "What You Get"
+          "insert": "The Constraint"
         }
       ],
       "children": []
     },
-    "00-foundation-3": {
-      "id": "00-foundation-3",
+    "f-c-lead": {
+      "id": "f-c-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "An objective lives in your project beside the work it describes. Its goal names the outcome and completion criteria. Context files hold the constraints and execution plan. Current state records accepted decisions, unfinished work, and paths to the evidence."
+          "insert": "Goal mode keeps one static goal prompt in context through every compaction."
         }
       ],
       "children": []
     },
-    "00-foundation-4": {
-      "id": "00-foundation-4",
-      "type": "paragraph",
-      "props": {},
-      "text": [
-        {
-          "insert": "The repository provides the authoring skill, a Python scaffolder, and a goal-length validator. The agent executes the work using its own tools. Project-specific runners implement checkpoints and runtime controls when the work needs them."
-        }
-      ],
-      "children": []
-    },
-    "00-foundation-5": {
-      "id": "00-foundation-5",
-      "type": "heading",
-      "props": {
-        "level": 2
-      },
-      "text": [
-        {
-          "insert": "When to Use It"
-        }
-      ],
-      "children": []
-    },
-    "00-foundation-6": {
-      "id": "00-foundation-6",
+    "f-c1": {
+      "id": "f-c1",
       "type": "list-item",
       "props": {
         "ordered": false
       },
       "text": [
         {
-          "insert": "Use an objective for research, migrations, audits, or implementation that spans sessions or produces evidence you need to revisit."
+          "insert": "The goal prompt is capped under 4,000 characters."
         }
       ],
       "children": []
     },
-    "00-foundation-7": {
-      "id": "00-foundation-7",
+    "f-c2": {
+      "id": "f-c2",
       "type": "list-item",
       "props": {
         "ordered": false
       },
       "text": [
         {
-          "insert": "Use it when the next session needs to distinguish a completed experiment from an achieved outcome."
+          "insert": "Everything else gets summarized at each compaction."
         }
       ],
-      "children": []
+      "children": [
+        "f-c2a",
+        "f-c2b"
+      ]
     },
-    "00-foundation-8": {
-      "id": "00-foundation-8",
+    "f-c2a": {
+      "id": "f-c2a",
       "type": "list-item",
       "props": {
         "ordered": false
       },
       "text": [
         {
-          "insert": "For a small change with one obvious check, keep the working context proportionate. A long-running runner needs more operational state than a short edit."
+          "insert": "Run details, results, and decisions lose detail every time."
         }
       ],
       "children": []
     },
-    "00-foundation-9": {
-      "id": "00-foundation-9",
+    "f-c2b": {
+      "id": "f-c2b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "On a run that lasts days, you cannot trust the summary to keep what matters."
+        }
+      ],
+      "children": []
+    },
+    "f-c3": {
+      "id": "f-c3",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "A long run needs far more context than 4,000 characters can hold."
+        }
+      ],
+      "children": [
+        "f-c3a",
+        "f-c3b",
+        "f-c3c",
+        "f-c3d"
+      ]
+    },
+    "f-c3a": {
+      "id": "f-c3a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It needs explicit stopping criteria."
+        }
+      ],
+      "children": []
+    },
+    "f-c3b": {
+      "id": "f-c3b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It needs to know how the work should be done, such as running experiments with MLX."
+        }
+      ],
+      "children": []
+    },
+    "f-c3c": {
+      "id": "f-c3c",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It needs a record of every experiment."
+        }
+      ],
+      "children": []
+    },
+    "f-c3d": {
+      "id": "f-c3d",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It needs to know where the run is right now."
+        }
+      ],
+      "children": []
+    },
+    "f-h-goal": {
+      "id": "f-h-goal",
       "type": "heading",
       "props": {
         "level": 2
       },
       "text": [
         {
-          "insert": "The Working Agreement"
+          "insert": "The Goal Prompt"
         }
       ],
       "children": []
     },
-    "00-foundation-10": {
-      "id": "00-foundation-10",
+    "f-g-lead": {
+      "id": "f-g-lead",
       "type": "paragraph",
       "props": {},
       "text": [
         {
-          "insert": "A future agent should be able to answer four questions from the files: What is the outcome? What is allowed to change? What evidence already exists? What is the next valid action?"
+          "insert": "The goal prompt stays short and points to files. Every objective's "
+        },
+        {
+          "insert": "goal.md",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": " has the same six blocks."
         }
       ],
       "children": []
     },
-    "00-foundation-11": {
-      "id": "00-foundation-11",
-      "type": "paragraph",
-      "props": {},
+    "f-g-code": {
+      "id": "f-g-code",
+      "type": "code",
+      "props": {
+        "language": "xml"
+      },
       "text": [
         {
-          "insert": "A written checkpoint requirement does not create a checkpoint mechanism. The skill asks for observable, resumable work, but the runner and its tests must provide those properties. Host features such as Codex goals separately control continuation and budgets."
+          "insert": "<goal>\n- What this objective must achieve.\n</goal>\n\n<context_refresh>\n- Reread objectives/<slug>/goal.md.\n- Reread objectives/<slug>/current_state.md.\n- Reread the relevant objectives/<slug>/context/*.md files.\n</context_refresh>\n\n<working_strategy>\n- The approach and the order of work.\n</working_strategy>\n\n<success_metrics>\n- Observable signs of progress.\n</success_metrics>\n\n<non_goals>\n- What this objective must not expand into.\n</non_goals>\n\n<completion_criteria>\n- What must be true before the objective is done.\n</completion_criteria>"
         }
       ],
       "children": []
     },
-    "00-foundation-12": {
-      "id": "00-foundation-12",
+    "f-g1": {
+      "id": "f-g1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The "
+        },
+        {
+          "insert": "<context_refresh>",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": " block does the main work."
+        }
+      ],
+      "children": [
+        "f-g1a",
+        "f-g1b"
+      ]
+    },
+    "f-g1a": {
+      "id": "f-g1a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It tells the agent to reread the objective's files at the start and after every compaction."
+        }
+      ],
+      "children": []
+    },
+    "f-g1b": {
+      "id": "f-g1b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The files carry the context that does not fit in the goal."
+        }
+      ],
+      "children": []
+    },
+    "f-g2": {
+      "id": "f-g2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The other blocks state the outcome, the approach, the progress signals, the scope limits, and when the objective is done."
+        }
+      ],
+      "children": []
+    },
+    "f-h-homes": {
+      "id": "f-h-homes",
       "type": "heading",
       "props": {
         "level": 2
       },
       "text": [
         {
-          "insert": "Read the Docs"
+          "insert": "Where Each Need Lives"
         }
       ],
       "children": []
     },
-    "00-foundation-13": {
-      "id": "00-foundation-13",
+    "f-hm-lead": {
+      "id": "f-hm-lead",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Each need of a long run has its own home in the objective."
+        }
+      ],
+      "children": []
+    },
+    "f-hm1": {
+      "id": "f-hm1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Stopping criteria live in goal.md.",
+          "attributes": {
+            "bold": true
+          }
+        }
+      ],
+      "children": [
+        "f-hm1a",
+        "f-hm1b"
+      ]
+    },
+    "f-hm1a": {
+      "id": "f-hm1a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Name every metric on every dataset so the agent knows exactly when it is done."
+        }
+      ],
+      "children": []
+    },
+    "f-hm1b": {
+      "id": "f-hm1b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "\"Get the accuracy higher\" lets the agent stop after one dataset improves."
+        }
+      ],
+      "children": []
+    },
+    "f-hm2": {
+      "id": "f-hm2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "How the agent should work lives in context/.",
+          "attributes": {
+            "bold": true
+          }
+        }
+      ],
+      "children": [
+        "f-hm2a",
+        "f-hm2b"
+      ]
+    },
+    "f-hm2a": {
+      "id": "f-hm2a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The context files hold the plan, the constraints, and project how-tos, such as running experiments with MLX."
+        }
+      ],
+      "children": []
+    },
+    "f-hm2b": {
+      "id": "f-hm2b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "They have no length limit."
+        }
+      ],
+      "children": []
+    },
+    "f-hm3": {
+      "id": "f-hm3",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Every experiment lives in the objective's workspace.",
+          "attributes": {
+            "bold": true
+          }
+        }
+      ],
+      "children": [
+        "f-hm3a",
+        "f-hm3b"
+      ]
+    },
+    "f-hm3a": {
+      "id": "f-hm3a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Scripts, reports, and run outputs stay inside "
+        },
+        {
+          "insert": "objectives/<slug>/",
+          "attributes": {
+            "code": true
+          }
+        },
+        {
+          "insert": "."
+        }
+      ],
+      "children": []
+    },
+    "f-hm3b": {
+      "id": "f-hm3b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The repo stays clean, and every file traces back to the objective that made it."
+        }
+      ],
+      "children": []
+    },
+    "f-hm4": {
+      "id": "f-hm4",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The current state lives in current_state.md.",
+          "attributes": {
+            "bold": true
+          }
+        }
+      ],
+      "children": [
+        "f-hm4a",
+        "f-hm4b"
+      ]
+    },
+    "f-hm4a": {
+      "id": "f-hm4a",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "It records what is proven, what is running, and what comes next."
+        }
+      ],
+      "children": []
+    },
+    "f-hm4b": {
+      "id": "f-hm4b",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "A restarted agent resumes from it, and you read the same file to check on a run."
+        }
+      ],
+      "children": []
+    },
+    "f-tree": {
+      "id": "f-tree",
+      "type": "file-tree",
+      "props": {
+        "entries": [
+          {
+            "path": "objectives/example/artifacts/",
+            "note": "reports and run outputs"
+          },
+          {
+            "path": "objectives/example/context/",
+            "note": "how the agent should work"
+          },
+          {
+            "path": "objectives/example/scripts/",
+            "note": "experiment scripts and runners"
+          },
+          {
+            "path": "objectives/example/current_state.md",
+            "note": "where the run is right now"
+          },
+          {
+            "path": "objectives/example/goal.md",
+            "note": "stopping criteria and the context_refresh list"
+          }
+        ]
+      },
+      "children": []
+    },
+    "f-h-pc": {
+      "id": "f-h-pc",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Pros and Cons"
+        }
+      ],
+      "children": []
+    },
+    "f-pc-lead": {
+      "id": "f-pc-lead",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "Objectives are the fast way to get one long task running. They do not replace a full orchestration system."
+        }
+      ],
+      "children": []
+    },
+    "f-pro": {
+      "id": "f-pro",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Pros",
+          "attributes": {
+            "bold": true
+          }
+        }
+      ],
+      "children": [
+        "f-pro1",
+        "f-pro2",
+        "f-pro3"
+      ]
+    },
+    "f-pro1": {
+      "id": "f-pro1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Setup takes a prompt and a few files, with no service to build."
+        }
+      ],
+      "children": []
+    },
+    "f-pro2": {
+      "id": "f-pro2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The format is built for long runs. The agent stays on track across compactions and restarts."
+        }
+      ],
+      "children": []
+    },
+    "f-pro3": {
+      "id": "f-pro3",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The pattern is general. It fits most tasks you can describe with clear stopping criteria."
+        }
+      ],
+      "children": []
+    },
+    "f-con": {
+      "id": "f-con",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "Cons",
+          "attributes": {
+            "bold": true
+          }
+        }
+      ],
+      "children": [
+        "f-con1",
+        "f-con2"
+      ]
+    },
+    "f-con1": {
+      "id": "f-con1",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "The run is not optimized. You cannot tune individual agents to cut cost or improve efficiency."
+        }
+      ],
+      "children": []
+    },
+    "f-con2": {
+      "id": "f-con2",
+      "type": "list-item",
+      "props": {
+        "ordered": false
+      },
+      "text": [
+        {
+          "insert": "One agent follows one path. There is no fan-out to parallel candidates or separate research agents."
+        }
+      ],
+      "children": []
+    },
+    "f-pc-close": {
+      "id": "f-pc-close",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "A fully built orchestration system would likely do better, but it takes far more time to build and tune."
+        }
+      ],
+      "children": []
+    },
+    "f-h-next": {
+      "id": "f-h-next",
+      "type": "heading",
+      "props": {
+        "level": 2
+      },
+      "text": [
+        {
+          "insert": "Read Next"
+        }
+      ],
+      "children": []
+    },
+    "f-n-lead": {
+      "id": "f-n-lead",
+      "type": "paragraph",
+      "props": {},
+      "text": [
+        {
+          "insert": "The other pages cover setup, the file format, and resuming a run."
+        }
+      ],
+      "children": []
+    },
+    "f-n1": {
+      "id": "f-n1",
       "type": "list-item",
       "props": {
         "ordered": false
@@ -192,13 +745,13 @@
           }
         },
         {
-          "insert": " walks through setup, a small example, and the first handoff."
+          "insert": " walks through setup, a worked example, and the first handoff."
         }
       ],
       "children": []
     },
-    "00-foundation-14": {
-      "id": "00-foundation-14",
+    "f-n2": {
+      "id": "f-n2",
       "type": "list-item",
       "props": {
         "ordered": false
@@ -214,13 +767,13 @@
           }
         },
         {
-          "insert": " defines file ownership, evidence, and completion."
+          "insert": " defines each file, the phase contract, and completion."
         }
       ],
       "children": []
     },
-    "00-foundation-15": {
-      "id": "00-foundation-15",
+    "f-n3": {
+      "id": "f-n3",
       "type": "list-item",
       "props": {
         "ordered": false
@@ -241,8 +794,8 @@
       ],
       "children": []
     },
-    "00-foundation-16": {
-      "id": "00-foundation-16",
+    "f-n4": {
+      "id": "f-n4",
       "type": "list-item",
       "props": {
         "ordered": false
@@ -258,28 +811,17 @@
           }
         },
         {
-          "insert": " maps the design to the two Python helpers and their limitations."
+          "insert": " documents the two Python helpers and their limits."
         }
       ],
       "children": []
     },
-    "00-foundation-17": {
-      "id": "00-foundation-17",
-      "type": "heading",
+    "f-n5": {
+      "id": "f-n5",
+      "type": "list-item",
       "props": {
-        "level": 2
+        "ordered": false
       },
-      "text": [
-        {
-          "insert": "Source and Scope"
-        }
-      ],
-      "children": []
-    },
-    "00-foundation-18": {
-      "id": "00-foundation-18",
-      "type": "paragraph",
-      "props": {},
       "text": [
         {
           "insert": "The skill source is "
@@ -287,7 +829,6 @@
         {
           "insert": ".codex/skills/setup-objective/SKILL.md",
           "attributes": {
-            "code": true,
             "reference": {
               "kind": "source",
               "path": ".codex/skills/setup-objective/SKILL.md"
@@ -295,7 +836,7 @@
           }
         },
         {
-          "insert": ". These initial docs describe the checked-in implementation at revision 5fe8249 and assume familiarity with coding agents. They do not require a particular host's autonomous-goal feature."
+          "insert": "."
         }
       ],
       "children": []
