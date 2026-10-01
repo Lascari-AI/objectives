@@ -8,7 +8,7 @@
       "targetSymbol": null,
       "targetLine": null,
       "targetSection": null,
-      "updatedAt": "2026-10-01T14:02:14.727Z"
+      "updatedAt": "2026-10-01T14:30:42.031Z"
     },
     {
       "sourcePath": "40-guides/doc.json",
@@ -18,7 +18,7 @@
       "targetSymbol": null,
       "targetLine": null,
       "targetSection": null,
-      "updatedAt": "2026-10-01T14:02:14.728Z"
+      "updatedAt": "2026-10-01T14:30:42.031Z"
     },
     {
       "sourcePath": "30-implementation/doc.json",
@@ -28,7 +28,7 @@
       "targetSymbol": null,
       "targetLine": null,
       "targetSection": null,
-      "updatedAt": "2026-10-01T14:02:14.728Z"
+      "updatedAt": "2026-10-01T14:30:42.032Z"
     }
   ],
   "20-agents": [
@@ -40,7 +40,7 @@
       "targetSymbol": null,
       "targetLine": null,
       "targetSection": null,
-      "updatedAt": "2026-10-01T14:02:14.727Z"
+      "updatedAt": "2026-10-01T14:30:42.031Z"
     }
   ],
   "30-implementation": [
@@ -52,7 +52,7 @@
       "targetSymbol": null,
       "targetLine": null,
       "targetSection": null,
-      "updatedAt": "2026-10-01T14:02:14.727Z"
+      "updatedAt": "2026-10-01T14:30:42.031Z"
     }
   ],
   "40-guides": [
@@ -64,7 +64,7 @@
       "targetSymbol": null,
       "targetLine": null,
       "targetSection": null,
-      "updatedAt": "2026-10-01T14:02:14.727Z"
+      "updatedAt": "2026-10-01T14:30:42.031Z"
     }
   ]
 }
