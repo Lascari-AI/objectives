@@ -176,7 +176,7 @@
           }
         },
         {
-          "insert": " and ask it to use the skill in your target repository."
+          "insert": ". Ask your agent to use the skill in your target repository."
         }
       ],
       "children": [
